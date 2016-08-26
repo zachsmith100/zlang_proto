@@ -1,0 +1,36 @@
+
+EntryPoint
+	public
+		makeTest v1 v2
+			print("==> ")
+			print(v1)
+			print(" ")
+			print(v2)
+			print(" ")
+			println(a)
+			a = v1
+			println(a)
+			a = v2
+			return true
+
+		run
+			arr = Array
+			arr[] = 1
+			arr[] = true
+			arr[] = 1.1
+			arr[] = "hello"
+			arr[] = "a"
+			arr[] = Object
+			arr[] = Array
+			arr[] = Hastable
+			arr[] = me.testExpression
+			arr[] = EntryPoint
+			arr[] = openStream("input_xml" "xml")
+
+			for x = 0; x < arr.length; x++
+				for y = 0; y < arr.length; y++
+					if (x != y)
+						println(me.makeTest(arr[x] arr[y]).object.success)
+
+			return true
+

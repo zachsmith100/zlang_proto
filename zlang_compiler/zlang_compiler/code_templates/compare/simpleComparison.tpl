@@ -1,0 +1,1 @@
+([[leftValue]] [[compareSign]] [[rightValue]])

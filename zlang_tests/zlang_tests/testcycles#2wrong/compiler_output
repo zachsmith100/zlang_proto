@@ -1,0 +1,8 @@
+Start compiler 
+Fatal error in <some file> at line 12! Attempt to use 'break' operator outside of loop! 
+Fatal error in <some file> at line 20! Attempt to use 'continue' operator outside of loop! 
+Fatal error in <some file> at line 32! Attempt to use 'continue' operator outside of loop! 
+Fatal error in <some file> at line 56! Attempt to use 'break' operator outside of loop! 
+Code generation was FAILED with fatal errors: 4
+
+End compiler 

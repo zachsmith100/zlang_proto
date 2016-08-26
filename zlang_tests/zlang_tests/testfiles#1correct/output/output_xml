@@ -1,0 +1,7 @@
+<root life="10">
+    <subobject1 prop="sometext" val="3.500000" value="3"/>
+    <subobject2 prop="text" val="true" value="20">
+        <subsubobject0 open="1"/>
+        <subsubobject1 open="3"/>
+    </subobject2>
+</root>

@@ -1,0 +1,12 @@
+include "qmessagebox.h"
+
+CMessageBox
+	public
+		title = ""
+		text = ""
+
+		show
+			cpp@
+				QMessageBox::information(NULL, ME["title"].ToString().c_str(), ME["text"].ToString().c_str());
+			@cpp
+			return true	

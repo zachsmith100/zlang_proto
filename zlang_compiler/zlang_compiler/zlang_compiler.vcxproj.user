@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LocalDebuggerCommandArguments>"D:\oDesk\zlang\gui_tool\guiapp\program\ " C:\ProgramData\zlang_output\ msvc --projecttree</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommand>$(ProjectDir)zlang_compiler_dbg.exe</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>$(ProjectDir)</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LocalDebuggerCommand>$(ProjectDir)zlang_compiler.exe</LocalDebuggerCommand>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArguments>C:\odesk\zlang\zlang_tests\zlang_tests\testarray#1correct\program\ C:\odesk\zlang\zlang_compiler\zlang_compiler\output\ msvc </LocalDebuggerCommandArguments>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,35 @@
+EmptyClass
+	public
+		name = "Bill"
+
+EntryPoint
+	public
+		run
+			a = EmptyClass
+			append(a)
+			print(a)
+			print("\n")
+			b = 1
+			append(b)
+			print(b)
+			print("\n")
+			c = "hello "
+			append(c)
+			print(c)
+			print("\n")
+			d = EmptyClass
+			append(d)
+			print(d)
+			print("\n")
+			e = EmptyClass
+			read(e)
+			print(e)
+			print("\n")
+			f = 3
+			read(f)
+			print(f)
+			print("\n")
+			g = EmptyClass
+			read(g)
+			print(g)
+			print("\n")

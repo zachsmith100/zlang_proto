@@ -1,0 +1,28 @@
+
+singleton EntryPoint
+	public
+		methods = ""
+		title = "Zlang GUI tool"
+
+		onSomeWindowClose
+			CWindowApplication.quit()
+			return true
+
+		run
+			if (me.commandLineParams.length != 1)
+				println("Usage: guitool.exe [path to zlang project]")
+
+				msg = CMessageBox(title: "Failed to run", text: "You must use command line to define path to zlang project!", icon: "error", buttons: "Ok")
+				msg.show()
+
+				CWindowApplication.quit()
+			
+				return false
+
+			me.mainWindow = CMethodSelectWindow(title: me.title)
+			me.thirdWindow = CWindow(title: "Result of method call")
+			me.thirdWindow.onClose = me.onSomeWindowClose
+			me.mainWindow.showWindow()
+
+			return true
+

@@ -1,0 +1,35 @@
+
+include "qslider.h"
+
+CSlider : cppinherit(public EmptyWindow)
+	public
+		cpp@
+			QSlider* slider;
+		@cpp
+
+	public
+		wnd = Object
+
+		onCreated
+			handle = me.wnd.getHandle()
+			name = CNamesGenerator.getName()
+			cpp@
+				CWindowProto* wndPtr = (CWindowProto*)handle.ToPtr();
+				MY->slider = new QSlider(Qt::Horizontal, wndPtr);
+				MY->slider->setMinimum(ME["min"].ToInt());
+				MY->slider->setMaximum(ME["max"].ToInt());
+				MY->slider->setObjectName(name.ToString().c_str());
+				MY->slider->setGeometry(QRect(ME["x"].ToInt(), ME["y"].ToInt(), ME["width"].ToInt(), ME["height"].ToInt()));
+			@cpp
+			return true
+
+		getValue
+			value = 0
+			cpp@
+				if (MY->slider)
+				{
+					value = MY->slider->value();
+				}
+			@cpp
+			result.result = value
+			result.success = true

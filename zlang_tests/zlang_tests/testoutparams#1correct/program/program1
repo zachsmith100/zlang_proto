@@ -1,0 +1,63 @@
+SomeBaseClass
+	public
+		get_mul_and_sum a b (out)c
+			c = a + b + a * b
+			return true		
+
+EntryPoint : SomeBaseClass
+	public
+		get_sum a b (out)c
+			c = a + b
+			return true
+
+		get_mul (out)a b c
+			a = b * c
+			return false
+
+		get_num (out)n
+			n = 10
+			return true
+
+		get_avg a (out)b c
+			b = (a + c) / 2
+			return true
+
+	public
+		run
+			a1 = 1
+			b1 = 2
+			c1 = 999
+			me.get_sum(a1 b1 c1)
+			print(c1)
+			print("\n")
+			me.get_sum(3 4 c1)
+			print(c1)
+			print("\n")
+			b2 = 5
+			c2 = 1
+			me.get_mul(a2 b2 c2)
+			print(a2)
+			print("\n")
+			me.get_mul(a2 2 3)
+			print(a2)
+			print("\n")
+			me.get_num(a3)
+			print(a3)
+			print("\n")
+			a4 = 3
+			c4 = 7
+			me.get_avg(a4 b4 c4)
+			print(b4)
+			print("\n")
+			me.get_avg(2 b4 6)
+			print(b4)
+			print("\n")
+			base.get_mul_and_sum(1 2 c5)
+			print(c5)
+			print("\n")
+		
+			inst = SomeBaseClass
+			inst.get_mul_and_sum(1 2 c6)
+
+			return true			
+			

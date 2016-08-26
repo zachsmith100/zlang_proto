@@ -1,0 +1,8 @@
+Element of hashtable is skipped in json conversion process because of unsupported type of key (hashtable) after line 15 in EntryPoint::run
+Attempt to use unknown property of hashtable value variable after line 45 in EntryPoint::run
+Attempt to use unknown method of hashtable value variable after line 49 in EntryPoint::run
+Attempt to use deleted hashtable value after line 55 in EntryPoint::run
+Attempt to use deleted hashtable value after line 55 in EntryPoint::run
+Attempt to use deleted hashtable value after line 55 in EntryPoint::run
+Attempt to use deleted hashtable value after line 55 in EntryPoint::run
+Attempt to use deleted hashtable value after line 76 in EntryPoint::run

@@ -1,0 +1,3 @@
+Invalid regular expression ([[:error:]]) after line 8 in EntryPoint::run
+You must define only one type of regular expressions after line 19 in EntryPoint::run
+You must define only one type of regular expressions after line 23 in EntryPoint::run

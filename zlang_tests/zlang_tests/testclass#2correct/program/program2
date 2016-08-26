@@ -1,0 +1,40 @@
+
+SomeClass
+	public
+		name = "my name"
+		prop = 123
+	
+		onCreated
+			println("OnCreated")
+			println(me.name)
+			println(me.prop)
+			println(me.newprop)
+
+EntryPoint
+	public
+		run
+			println("==1==")
+			c1 = SomeClass
+			println("==2==")
+			c2 = SomeClass(name: "your name")
+			println("==3==")
+			c3 = SomeClass(prop: 321)
+			println("==4==")
+			c4 = SomeClass(name: "your name", prop: 321, newprop: 3.3)
+			println("==5==")
+			c5 = SomeClass(prop: 3 + 2 * 3)
+			b = "Hello"
+			println("==6==")
+			c6 = Object(newprop: b)
+			println(c6.newprop)
+			bb = Array
+			bb[] = 1
+			bb[] = 2
+			println("==7==")
+			c7 = SomeClass(newprop: bb)
+			println("==8==")
+			c8 = SomeClass(newprop: Array)
+			println("==9==")
+			c9 = SomeClass(newprop: Object)
+			return true
+

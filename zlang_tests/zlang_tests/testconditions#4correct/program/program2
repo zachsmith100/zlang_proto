@@ -1,0 +1,190 @@
+
+EntryPoint
+	public
+		makeVarComparison v1 v2
+			print("[[[[[[ ")
+			print(v1)
+			print(",")
+			println(v2)
+			print("< ")
+			println(v1 < v2)
+			print("<= ")
+			println(v1 <= v2)
+			print("== ")
+			println(v1 == v2)
+			print("!= ")
+			println(v1 != v2)
+			print("> ")
+			println(v1 > v2)
+			print(">= ")
+			println(v1 >= v2)
+			return true
+
+		makeIntLeftComparison v2
+			print("[[[[[[ ")
+			print("1,")
+			println(v2)
+			print("< ")
+			println(1 < v2)
+			print("<= ")
+			println(1 <= v2)
+			print("== ")
+			println(1 == v2)
+			print("!= ")
+			println(1 != v2)
+			print("> ")
+			println(1 > v2)
+			print(">= ")
+			println(1 >= v2)
+			return true
+
+		makeIntRightComparison v1
+			print("[[[[[[ ")
+			print(v1)
+			println(",2")
+			print("< ")
+			println(v1 < 2)
+			print("<= ")
+			println(v1 <= 2)
+			print("== ")
+			println(v1 == 2)
+			print("!= ")
+			println(v1 != 2)
+			print("> ")
+			println(v1 > 2)
+			print(">= ")
+			println(v1 >= 2)
+			return true
+
+		makeStringLeftComparison v2
+			print("[[[[[[ ")
+			print("\"1\",")
+			println(v2)
+			print("< ")
+			println("1" < v2)
+			print("<= ")
+			println("1" <= v2)
+			print("== ")
+			println("1" == v2)
+			print("!= ")
+			println("1" != v2)
+			print("> ")
+			println("1" > v2)
+			print(">= ")
+			println("1" >= v2)
+			return true
+
+		makeStringRightComparison v1
+			print("[[[[[[ ")
+			print(v1)
+			println(",\"2\"")
+			print("< ")
+			println(v1 < "2")
+			print("<= ")
+			println(v1 <= "2")
+			print("== ")
+			println(v1 == "2")
+			print("!= ")
+			println(v1 != "2")
+			print("> ")
+			println(v1 > "2")
+			print(">= ")
+			println(v1 >= "2")
+			return true
+
+		makeFloatLeftComparison v2
+			print("[[[[[[ ")
+			print("1.1,")
+			println(v2)
+			print("< ")
+			println(1.1 < v2)
+			print("<= ")
+			println(1.1 <= v2)
+			print("== ")
+			println(1.1 == v2)
+			print("!= ")
+			println(1.1 != v2)
+			print("> ")
+			println(1.1 > v2)
+			print(">= ")
+			println(1.1 >= v2)
+			return true
+
+		makeFloatRightComparison v1
+			print("[[[[[[ ")
+			print(v1)
+			println(",2.2")
+			print("< ")
+			println(v1 < 2.2)
+			print("<= ")
+			println(v1 <= 2.2)
+			print("== ")
+			println(v1 == 2.2)
+			print("!= ")
+			println(v1 != 2.2)
+			print("> ")
+			println(v1 > 2.2)
+			print(">= ")
+			println(v1 >= 2.2)
+			return true
+
+		makeBoolLeftComparison v2
+			print("[[[[[[ ")
+			print("false,")
+			println(v2)
+			print("< ")
+			println(false < v2)
+			print("<= ")
+			println(false <= v2)
+			print("== ")
+			println(false == v2)
+			print("!= ")
+			println(false != v2)
+			print("> ")
+			println(false > v2)
+			print(">= ")
+			println(false >= v2)
+			return true
+
+		makeBoolRightComparison v1
+			print("[[[[[[ ")
+			print(v1)
+			println(",true")
+			print("< ")
+			println(v1 < true)
+			print("<= ")
+			println(v1 <= true)
+			print("== ")
+			println(v1 == true)
+			print("!= ")
+			println(v1 != true)
+			print("> ")
+			println(v1 > true)
+			print(">= ")
+			println(v1 >= true)
+			return true
+
+		run
+			a = Array
+			a[] = 1
+			a[] = 2.2
+			a[] = "2"
+			a[] = true
+			a[] = false
+			a[] = 'a'
+
+			for i = 0; i < a.length; i++
+				println("==========")
+				println(a[i])
+				println("==========")
+				println(me.makeVarComparison(a[i] 2))
+				println(me.makeIntLeftComparison(a[i]))
+				println(me.makeIntRightComparison(a[i]))
+				println(me.makeFloatLeftComparison(a[i]))
+				println(me.makeFloatRightComparison(a[i]))
+				println(me.makeStringLeftComparison(a[i]))
+				println(me.makeStringRightComparison(a[i]))
+				println(me.makeBoolLeftComparison(a[i]))
+				println(me.makeBoolRightComparison(a[i]))
+
+			return true

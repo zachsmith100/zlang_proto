@@ -1,0 +1,6 @@
+[oldsection]
+key2=2
+oldkey=newvalue
+[section1]
+name1=val1
+name2=val2

@@ -1,0 +1,133 @@
+
+EntryPoint
+	public
+		log a
+			println(Number.Log(a))
+
+		log10 a
+			println(Number.Log10(a))
+
+		executeCalculations a b c
+			println("a = " + a)
+			println("b = " + b)
+			println("c = " + c)
+			
+			println("abs")
+			println(Number.Abs(a))
+			println(Number.Abs(b))
+			println(Number.Abs(c))
+
+			a = Number.Abs(a)
+			b = Number.Abs(b)
+			c = Number.Abs(c)
+
+			println("sin")
+			println(Number.Sin(a))
+			println(Number.Sin(b))
+			println(Number.Sin(c))
+
+			println("cos")
+			println(Number.Cos(a))
+			println(Number.Cos(b))
+			println(Number.Cos(c))
+
+			println("tan")
+			println(Number.Tan(a))
+			println(Number.Tan(b))
+			println(Number.Tan(c))
+
+			println("ctg")
+			println(Number.Ctg(a))
+			println(Number.Ctg(b))
+			if (c != 0)
+				println(Number.Ctg(c))
+
+			println("pow")
+			println(Number.Pow(a a))
+			println(Number.Pow(b b))
+			println(Number.Pow(c c))
+
+			println("log")
+			me.log(a)
+			me.log(b)
+			me.log(c)
+
+			println("log10")
+			me.log10(a)
+			me.log10(b)
+			me.log10(c)
+
+			println("exp")
+			println(Number.Exp(a))
+			println(Number.Exp(b))
+			println(Number.Exp(c))
+
+			println("sqrt")
+			println(Number.Sqrt(a))
+			println(Number.Sqrt(b))
+			println(Number.Sqrt(c))
+
+			a = a / 3
+			b = b / 3
+			c = c / 3
+
+			println("asin")
+			println(Number.Asin(a))
+			println(Number.Asin(b))
+			println(Number.Asin(c))
+
+			println("acos")
+			println(Number.Acos(a))
+			println(Number.Acos(b))
+			println(Number.Acos(c))
+
+			println("atan")
+			println(Number.Atan(a))
+			println(Number.Atan(b))
+			println(Number.Atan(c))
+
+			println("actg")
+			println(Number.Actg(a))
+			println(Number.Actg(b))
+			println(Number.Actg(c))
+
+			println("round")
+			println(Number.Round(a))
+			println(Number.Round(b))
+			println(Number.Round(c))
+
+			println("truncate")
+			println(Number.Truncate(a))
+			println(Number.Truncate(b))
+			println(Number.Truncate(c))
+
+			println("ceil")
+			println(Number.Ceil(a))
+			println(Number.Ceil(b))
+			println(Number.Ceil(c))
+
+			println("floor")
+			println(Number.Floor(a))
+			println(Number.Floor(b))
+			println(Number.Floor(c))
+
+			println("fraction")
+			println(Number.Fraction(a))
+			println(Number.Fraction(b))
+			println(Number.Fraction(c))
+
+			println("function come to end")
+
+		run
+			a = ~-2.0
+			b = -2.0
+			c = -2
+			me.executeCalculations(a b c)
+
+			a = ~-2.156789
+			b = -2.156789
+			c = 0
+			me.executeCalculations(a b c)
+
+			return true
+

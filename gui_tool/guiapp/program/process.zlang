@@ -1,0 +1,79 @@
+include "sys/types.h"
+include "sys/stat.h"
+windows::include "direct.h"
+windows::include "shlobj.h"
+windows::include "winreg.h"
+unix::include "unistd.h"
+include "stdlib.h"
+include "stdio.h"
+
+singleton Process
+	private
+		getTempFolder
+			path = ""
+			cpp@
+				#ifdef _WIN32
+					char tmp[MAX_PATH];
+					SHGetSpecialFolderPathA(NULL, tmp, CSIDL_COMMON_APPDATA, true);	
+					path = tmp;
+				#else
+					path = P_tmpdir;
+				#endif
+			@cpp
+			result.result = path
+			result.success = true
+
+	public
+		@return
+			defaultField: resultObject
+
+		start path params
+			ok = true
+			startPath = EntryPoint.processFolder
+
+			path = startPath + path
+			println(path)
+
+			jsonFile = me.getTempFolder()
+			jsonFile .= "/ztemp.json"
+			params .= " >"
+			params .= jsonFile
+
+			cpp@			
+				#ifdef _WIN32
+					std::string path_ = path.ToString();
+					std::string params_ = params.ToString();
+					path_ = "/c " + path_;
+					path_ = path_ + " ";
+					params_ = path_ + params_;				
+					SHELLEXECUTEINFOA ShExecInfo;
+					ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
+					ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
+					ShExecInfo.hwnd = NULL;
+					ShExecInfo.lpVerb = "open";
+					ShExecInfo.lpFile = "cmd.exe";
+					ShExecInfo.lpParameters = params_.c_str();
+					ShExecInfo.lpDirectory = NULL;
+					ShExecInfo.nShow = SW_MAXIMIZE;
+					ShExecInfo.hInstApp = NULL;
+					bool res = (ShellExecuteExA(&ShExecInfo) == TRUE);
+					WaitForSingleObject(ShExecInfo.hProcess, INFINITE);
+					ok = res;
+				#else
+					std::string shellCmd = path.ToString();
+					shellCmd += " ";
+					shellCmd += params.ToString();
+					system(shellCmd.c_str());
+					ok = true;
+				#endif
+			@cpp
+
+			if ok == false
+				return false
+			file = openStream(jsonFile "json")
+			if file.opened == false
+				return false
+			read(file resultObject)
+			clearStream(file)
+			unset(file)
+			return true, resultObject

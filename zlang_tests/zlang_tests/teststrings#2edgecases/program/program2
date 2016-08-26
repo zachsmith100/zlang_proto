@@ -1,0 +1,97 @@
+
+EntryPoint
+	public
+		find1 str
+			println(str[String.FindFirstOf(str "s")])
+			return true
+
+		find2 str
+			println(str[String.FindFirstOf(str "s" -10)])
+			return true
+
+		find3 str
+			println(str[String.FindFirstOf(str "s" 100)])
+			return true
+
+		find4 str
+			println(str[String.FindLastOf(str "s" -100)])
+			return true
+
+		find5 str
+			println(str[String.FindLastOf(str "s" 100)])
+			return true
+
+		run
+			str = ""
+			str = String.LeftTrim(str)
+			println(str)
+
+			str = ""
+			str = String.RightTrim(str)
+			println(str)
+
+			str = ""
+			str = String.Trim(str)
+			println(str)
+
+			println(str.length)
+
+			println(String.Find(str ""))
+			println(String.Find(str "a" -1))
+
+			print("f1: ")
+			println(me.find1(str).object.success)
+			print("f2: ")
+			println(me.find2(str).object.success)
+			print("f3: ")
+			println(me.find3(str).object.success)
+			print("f4: ")
+			println(me.find4(str).object.success)
+			print("f5: ")
+			println(me.find5(str).object.success)
+
+			str = String.Erase(str 0)
+			str = String.Erase(str -1)
+			str = String.Erase(str 0 -1)
+			str = String.Erase(str -1 -1)
+
+			str = "world"
+			str = String.Erase(str 0 100)
+			println(str)
+
+			str = String.Replace(str "initial" "wrong")
+			str = String.Replace(str "" "wrong")
+			println(str)
+
+			str = String.Insert(str 10 "!!!")
+			println(str)
+
+			str = String.SubString(str 5 10)
+			println(str)
+
+			str = "example"
+			str = String.Erase(str 6)
+			println(str)
+			str = String.Erase(str 6)
+			println(str)
+			str = String.Erase(str 4 2)
+			println(str)
+
+			str = "world"
+			str = String.SubString(str 2 3)
+			println(str)
+
+			str = ""
+			arr = String.Explode(str "!")
+			println(arr)
+
+			str = "1213141"
+			arr = String.Explode(str "")
+			println(arr)
+
+			str2 = 1213141
+			arr = String.Explode(str2 "1")
+			println(arr)
+
+			return true
+

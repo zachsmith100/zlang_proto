@@ -1,0 +1,48 @@
+
+EntryPoint
+	public
+		testConvertable v srcTypeName destTypeName
+			print(srcTypeName)
+			print(" to ")
+			print(destTypeName)
+			print(": ")
+			println(v.convertable(destTypeName))
+
+		testConvertableToAll v typeName
+			me.testConvertable(v typeName "integer")
+			me.testConvertable(v typeName "symbol")
+			me.testConvertable(v typeName "string")
+			me.testConvertable(v typeName "double")
+			me.testConvertable(v typeName "boolean")
+			me.testConvertable(v typeName "class")
+			me.testConvertable(v typeName "array")
+			me.testConvertable(v typeName "hashtable")
+			me.testConvertable(v typeName "stream")
+			me.testConvertable(v typeName "function")
+
+		run
+			a = 2
+			me.testConvertableToAll(a "integer")
+			a2 = 'a'
+			me.testConvertableToAll(a2 "symbol")
+			a3 = "Hello world!"
+			me.testConvertableToAll(a3 "string")
+			a4 = 2.3
+			me.testConvertableToAll(a4 "double")
+			a5 = true
+			me.testConvertableToAll(a5 "boolean")
+			a6 = EntryPoint
+			me.testConvertableToAll(a6 "class")
+			a7 = Object
+			me.testConvertableToAll(a7 "object")
+			a8 = Array
+			me.testConvertableToAll(a8 "array")
+			a9 = Hashtable
+			me.testConvertableToAll(a9 "hashtable")
+			a10 = openStream("input1" "text")
+			me.testConvertableToAll(a10 "stream")
+			a11 = me.testConvertable
+			me.testConvertableToAll(a11 "function")
+
+			return true
+

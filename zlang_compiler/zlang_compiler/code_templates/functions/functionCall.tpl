@@ -1,0 +1,1 @@
+[[functionName]]([[functionParameters]])[[resultFieldPlaceholder]][[end]]

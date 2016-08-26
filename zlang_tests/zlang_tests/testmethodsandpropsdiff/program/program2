@@ -1,0 +1,48 @@
+SimpleFirstClass
+	public
+		name = "Bill"
+		getName (out)nameParam
+			nameParam = name
+			return true
+
+SimpleSecondClass
+	public
+		name (out)nameParam
+			nameParam = "123"
+			return true
+
+EntryPoint : SimpleSecondClass
+	public
+		run
+			a = SimpleFirstClass
+			b = a.getName(c)
+			print(c)
+			a = SimpleFirstClass
+			b = a.name(c)
+			print(c)
+			a = SimpleFirstClass
+			b = a.getName
+			print(c)
+			a = SimpleFirstClass
+			b = a.name
+			print(c)
+			a = SimpleSecondClass
+			b = a.getName(c)
+			print(c)
+			a = SimpleSecondClass
+			b = a.name(c)
+			print(c)
+			a = SimpleSecondClass
+			b = a.getName
+			print(c)
+			a = SimpleSecondClass
+			b = a.name
+			print(c)
+			b = me.getName(c)
+			print(c)
+			b = me.name(c)
+			print(c)
+			b = me.getName
+			print(c)
+			b = me.name
+			print(c)

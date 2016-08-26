@@ -1,0 +1,1 @@
+for (unsigned int [[varName]]__i = 0; ([[map]]->ToHashtable()) && ([[varName]]__i < [[map]]->ToHashtable()->GetLength()); [[varName]]__i++)		

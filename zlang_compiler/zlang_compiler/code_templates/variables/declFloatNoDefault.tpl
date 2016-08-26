@@ -1,0 +1,1 @@
+CUniVar(CArbitraryPrecisionFloat(0.0, [[precision]]))[[end]]

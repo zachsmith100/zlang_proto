@@ -1,0 +1,22 @@
+
+EntryPoint
+	public
+		calculateSortIndex input (out)total
+			map = Hashtable
+			for length = 0; length < input.length; length++
+				map[0 + input[length] - 'a'] = 1
+
+			for radix = 0, i = 0; i < 26; i++
+			if map[i] == 1
+				map[i] = radix++
+
+			for i = length - 1, degree = 1; i >= 0; i--, degree *= radix
+				total += map[0 + input[i] - 'a'] * degree
+
+	public
+		run
+			total = 0
+			me.calculateSortIndex("run" total)
+			println(total)
+			return true
+

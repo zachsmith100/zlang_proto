@@ -1,0 +1,1 @@
+[[unorderedDeclarations]]for ([[initCode]]; [[condition]]; [[iterationCode]])

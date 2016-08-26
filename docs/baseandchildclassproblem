@@ -1,0 +1,29 @@
+
+BaseClass
+	private
+		a = 2
+	public
+		getSum s
+			s = a + b
+
+ChildClass <- BaseClass
+	private
+		a = 10
+		b = 1
+
+EntryPoint
+	public
+		run
+			m = 0
+			x = BaseClass
+			x.getSum m
+			print m		// m = 2, because b will be 0 (not exists)
+
+			y = ChildClass
+			getSum m
+			print m		// m = 2 or 10 or 11?
+
+			y.a = 6		// Will property a of base class be changed? property a of child class?
+			y.b = 3
+			getSum m
+			print m		// m = 2 or 6 or 9? 

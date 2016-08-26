@@ -1,0 +1,57 @@
+windows::include::path "include"
+windows::include::path "include\\QtWidgets"
+windows::include::path "include\\QtGui"
+windows::include::path "include\\QtANGLE"
+windows::include::path "include\\QtCore"
+
+windows::import::path "lib"
+linux::import::path "/usr/lib/i386-linux-gnu/"
+
+linux::include::path "/usr/include/i386-linux-gnu/qt5/"
+linux::include::path "/usr/include/i386-linux-gnu/qt5/QtWidgets"
+linux::include::path "/usr/include/i386-linux-gnu/qt5/QtGui"
+linux::include::path "/usr/include/i386-linux-gnu/qt5/QtANGLE"
+linux::include::path "/usr/include/i386-linux-gnu/qt5/QtCore"
+
+macosx::include::path "include/"
+macosx::include::path "include/QtWidgets"
+macosx::include::path "include/QtGui"
+macosx::include::path "include/QtANGLE"
+macosx::include::path "include/QtCore"
+macosx::include::path "~/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers"
+macosx::include::path "~/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers"
+macosx::include::path "~/Qt5.5.1/5.5/clang_64/lib/QtANGLE.framework/Headers"
+macosx::include::path "~/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers"
+
+windows::import "qtmaind.lib", "qtmain.lib"
+windows::import "Qt5Cored.lib", "Qt5Core.lib"
+windows::import "Qt5Widgetsd.lib", "Qt5Widgets.lib"
+windows::import "Qt5Guid.lib", "Qt5Gui.lib"
+                  
+linux::import "Qt5Core"
+linux::import "Qt5Widgets"
+linux::import "Qt5Gui"
+
+cpp::entry::point "RealEntryPoint"
+
+linux::compiler::flags "-fPIC -Wwrite-strings"
+macosx::compiler::flags "-stdlib=libc++ -headerpad_max_install_names -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -mmacosx-version-min=10.7 -Wl,-rpath,/Users/Admin/Qt5.5.1/5.5/clang_64/lib/ -F/Users/Admin/Qt5.5.1/5.5/clang_64/lib/ -framework QtGui -framework QtWidgets -framework QtCore -framework DiskArbitration -framework IOKit -framework OpenGL -framework AGL"
+
+cpp@
+	extern int RealEntryPoint(int argc, char* argv[]);
+
+	int main(int argc, char *argv[])
+	{
+		QApplication a(argc, argv);
+		RealEntryPoint(argc, argv);
+		return a.exec();
+	}
+@cpp
+
+singleton CWindowApplication
+	public
+		quit
+			cpp@
+				exit(0);
+			@cpp
+			return true

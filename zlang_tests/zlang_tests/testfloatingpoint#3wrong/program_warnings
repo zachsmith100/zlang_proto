@@ -1,0 +1,10 @@
+Function EntryPoint::testZeroDivision interrupted after line 8: Attempt to divide by zero
+Function EntryPoint::testInvalidPrecision1 interrupted after line 13: Precision must be defined between 16 and 1000 for query of PI value
+Function EntryPoint::testInvalidPrecision2 interrupted after line 18: Precision must be defined between 16 and 1000 for query of PI value
+Function EntryPoint::testInvalidPrecision3 interrupted after line 23: Precision must be defined between 16 and 1000 for query of PI value
+Function EntryPoint::testInvalidInit1 interrupted after line 34: Attempt to create arbitrary precision float using non-numeric value as default value
+Function EntryPoint::testInvalidInit2 interrupted after line 40: Attempt to create arbitrary precision float using non-numeric value as default value
+Function EntryPoint::testInvalidInit3 interrupted after line 46: Attempt to create arbitrary precision float using non-numeric value as default value
+Function EntryPoint::testInvalidInit4 interrupted after line 52: Attempt to create arbitrary precision float using non-numeric value as default value
+Function EntryPoint::testInvalidInit5 interrupted after line 58: Attempt to create arbitrary precision float using non-numeric value as default value
+Function EntryPoint::testInvalidInit6 interrupted after line 64: Attempt to create arbitrary precision float using non-numeric value as default value

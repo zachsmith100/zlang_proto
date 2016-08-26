@@ -1,0 +1,7 @@
+Start compiler 
+Fatal error in <some file> at line 16! Incorrect use of else statement! 
+Fatal error in <some file> at line 7! Incorrect use of else statement! 
+Fatal error in <some file> at line 19! Incorrect use of if statement! 
+Code generation was FAILED with fatal errors: 3
+
+End compiler 

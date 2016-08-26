@@ -1,0 +1,21 @@
+Someclaass
+	private
+		a = "Hello, World!"
+		b = 100.1
+		c = 0x100
+
+	public
+
+		d = "some public var"
+
+		test aa bb cc rc
+			rc = aa * bb * cc
+			return true
+
+		test2 aa bb cc rc
+			rc = me.a * bb * me.c
+			if aa > 1000
+				return false
+
+		test_something_else p1 p2 p3 rc
+			rc = me.a * me.b + me.c

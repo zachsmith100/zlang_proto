@@ -1,0 +1,18 @@
+
+globalFunc1 param1 param2
+	globalFunc2(param2)
+	println(param1 - param2)
+	return true
+
+EntryPoint
+	public
+		run
+			me.globalFunc1(1 2)
+			globalFunc2(3 10)
+			run()
+
+			return true
+
+globalFunc2 param1 (out)param2
+	param2 = param1 * 2
+	return true

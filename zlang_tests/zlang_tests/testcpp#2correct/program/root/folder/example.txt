@@ -1,0 +1,185 @@
+BaseDateFormatter
+	private
+		day = 1
+		month = 1
+		year = 1970
+	public
+		setDay d
+			me.day = d
+		setMonth m
+			me.month = m
+		setYear y
+			me.year = y
+		printDate
+			print ""
+
+USADateFormatter : BaseDateFormatter
+	public
+		printDate
+			str = me.year
+			str .= "-"
+			str .= me.month
+			str .= "-"
+			str .= me.day
+			print str
+
+RussiaDateFormatter : BaseDateFormatter
+	public
+		printDate
+			str = me.day
+			str .= "-"
+			str .= me.month
+			str .= "-"
+			str .= me.year
+			print str
+
+NonUsefulClass
+	public
+		abc = 681726
+		somefunc a
+			a.setDay 15
+			a.setMonth 6
+			a.setYear 2015
+			a.printDate
+			return true
+
+NonUsefulClass2
+	public
+		somefunc a b
+			a++
+			return true
+
+SomeclassBase : NonUsefulClass
+	public
+		f = 300
+
+		performSomethingViaObject
+			print "Hi!"
+
+		otherfunc a b
+			print "otherfunc"
+
+	private
+		somePrivateMethod
+			print "123"
+
+
+Someclass : SomeclassBase
+	private
+		a = 100.1
+		e = 0xFFa0
+
+		abc z
+			z++
+
+	public
+		setObject param
+			me.obj = param
+			me.otherfunc 1 2
+			base.somePrivateMethod
+			return true
+
+		performSomethingViaObject
+			tmp = RussiaDateFormatter
+			me.obj.somefunc tmp
+			print me.a
+			return true
+
+		initObject
+			tmp = NonUsefulClass
+			me.setObject tmp
+			return true
+
+	public
+		somefunc c b
+			c++
+			for i = 0; i < 10; i++
+				k = 0
+				while k < 2
+					k = k + 1
+					print b[i]
+
+			print me.f
+	public
+		reverse_words input
+			checking = Someclaass
+			start = 0
+			end = 0
+			while start == 0 or input[end - 1] != 0
+				if input[end] == ' ' or input[end] == 0
+					for j = start, k = end - 1; j < k; j++, k--
+						c = input[j]
+						input[j] = input[k]
+						input[k] = c
+					start = end + 1
+				end++
+			return true
+
+		reverse_words_stub input
+			return me.reverse_words input
+
+	public
+		d = "some public var"
+
+Someclaass
+	private
+		a = "Hello, World!"
+		b = 100.1
+		c = 0x100
+
+	public
+
+		d = "some public var"
+
+		test aa bb cc rc
+			rc = aa * bb * cc
+			return true
+
+		test2 aa bb cc rc
+			rc = me.a * bb * me.c
+			if aa > 1000
+				return false
+
+		test_something_else p1 p2 p3 rc
+			rc = me.a * me.b + me.c
+
+
+singleton SomeOtherClass
+	public
+		do_something
+			print "Hello"
+
+EntryPoint
+	public
+		somefunc p1
+			p1++
+		run
+			z = Someclass
+			a = Someclass
+			a.somefunc 1 "Hello"
+			a.initObject
+			a.performSomethingViaObject
+			z.ff = a
+			tmp = RussiaDateFormatter
+			z.ff.obj.somefunc tmp
+			me.z = z
+			me.ff.obj.somefunc tmp
+			print z.ff.obj.abc
+			print me.ff.obj.abc
+			read me.ff.obj.abc
+
+			a.otherfunc 1 2
+			a.somefunc 1
+			print a.f
+
+			inp = "Hello "
+			inp .= "world"
+			b = a.reverse_words_stub inp
+			print warnings inp
+			print a.d
+			print a
+			read c
+			c.d = "Updated"
+			print c
+			read a
+			print a

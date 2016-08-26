@@ -1,0 +1,129 @@
+Hi, Zach!
+
+I want to get your fast opinion about this proposal. I resolved issues with MPFR library, so there are no crashes now. It is fastest library according to common opinion in several stackoverflow posts, so I think it is good choice for us.
+
+==========================
+
+Default type for non-integers number can be defined by config of compiler or/and edition of compiler (like zlang for finance).
+Precision for default type can be configured also.
+
+We can set max precision to some reasonable value, for example, 768. Using bigger precision than max is a compile-time error.
+
+Why does there have to be a max?
+
+There must be a way to define type of numeric variable explicitely (independently from compiler config):
+a = 0 // integer
+
+Default type used. Might be integer, might be floating point.
+
+a = 0.0 // type for non-integer by default (defined in config). Default precision will be used
+
+Default type used. If default type is not floating point, then use the default floating point type with default precision.
+
+a = 0.0d // usual C++ double
+
+Don't support this notation.
+
+a = 0.0~128 // arbitrary precision floating point
+
+Don't support this notation.
+
+a = 0.0~f128 // arbitrary precision fixed point
+
+Don't support this notation.
+
+Use a = number(0, width=128, precision=64, isComplex=true) or an equivalent. Precision 0 is integer.
+a = Number<128>(0);
+a = Float<128>(0);
+a = Fixed<128>(0);
+
+There is need in a lot of operations for floating/fixed point variables:
+1) Conversion to string/conversion to other number/print with needed precision and alignment
+print(a:10) // 10 digits after point
+
+Don't like this syntax
+
+print(a:10:5) // 10 digits before point and 5 digits after point
+
+Don't like this syntax
+
+s = "" + a:10 // 10 digits after point
+
+Don't like this syntax
+
+s = "" + a:10:5 // 10 digits before point and 5 digits after point
+
+Don't like this syntax
+
+b = a:10 // 10 digits after point
+
+Don't like this syntax
+
+b = a:10:5 // this is not error, but restriction for before point part will be ignored
+
+Don't like this syntax
+
+Something like this is more what I had in mind:
+
+a =  number(1000345.32456463456, 64, 64)
+b =  100.1004345
+s = "some string an {0} some number + another number {1}".format(a.toString(precision=10), b.toString(precision=5))
+print(s)
+------------------------
+some string an 1000345.3245646346 some number + another number 100.10043
+
+*Note automatic rounding.
+
+2) Math operations: abs, sin, cos, log, etc
+Possible ways:
+a. abs(f)
+b. f.abs()
+c. Math.Abs(f)
+
+Use C
+
+Personally, I prefer last way and moreover I suggest to also refactor string functions, so we will get
+Number.Abs(f)
+String.Trim(s)
+and so on
+
+Agree
+
+Full list: sqrt, pow, abs, sin, cos, tan, ctg, log, log2, log10, exp, exp2, exp10, acos, asin, atan, actg
+
+3) NaN and infinity checks - generally it will be good to eleminate any need in it. Let's think that any
+operation which can lead to NaN or infinity result is a error.
+
+4) Precision change, precision access and precision change conventions - 
+b - 128-bit floating point 
+c - 192-bit floating point 
+a = b + c
+a - 128-bit fp because of first argument precision
+
+First check for type compatibility. Cast everything up to the value with the highest precision. Return with the type of highest precision.
+
+The problem with trying to optimize for precision, is it results in expensive bugs that are hard to find. For cases where this might cause a performance issue, the types can be hand optimized by the programmer.
+
+Precision can be changed ONLY during math operations. Precision can be accessed via getPrecision method
+using usual math operation notation for call it.
+
+5) Rounding functions - we can use same notation
+round
+trunc
+ceil
+floor
+frac
+
+Spell to completion (trunc => truncate, etc.).
+
+We also must provide some API to work with famous constants like PI number. Maybe something like PI:100 (100 digits after point).
+
+Agree. But it should be something like math.constants.pi(width=100).
+
+Errors. Any attempt to use math functions incorrectly like sqrt(-1), acos(-10) and so on must lead to exception and interruption of 
+current function.
+
+Agree. But no exceptions, should use early returns and standard return type.
+
+With best regards,
+Andrey.

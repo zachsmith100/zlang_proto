@@ -1,0 +1,84 @@
+include "qtreeview.h"
+
+CTreeViewItemId
+	public
+		cpp@
+			QStandardItem* node;
+		@cpp
+
+		onCreated
+			cpp@
+				MY->node = NULL;
+			@cpp
+			return true
+
+		setNode node
+			cpp@
+				QStandardItem* nodePtr = (QStandardItem*)node.ToPtr();
+				MY->node = nodePtr;
+			@cpp
+			return true
+
+		getNode 
+			node = 0
+			cpp@
+				node = (void*)MY->node;
+			@cpp			
+			result.result = node
+			result.success = true
+
+CTreeView
+	public
+		cpp@
+			QStandardItemModel* model;
+			QTreeView* treeView;
+		@cpp
+
+		onCreated
+			handle = me.wnd.getHandle()
+			name = CNamesGenerator.getName()
+			cpp@
+				CWindowProto* wndPtr = (CWindowProto*)handle.ToPtr();
+				MY->model = new QStandardItemModel();
+				MY->treeView = new QTreeView(wndPtr);
+				MY->treeView->header()->hide();
+				MY->treeView->setModel(MY->model);
+				MY->treeView->setObjectName(name.ToString().c_str());
+				MY->treeView->setGeometry(ME["x"].ToInt(), ME["y"].ToInt(), ME["width"].ToInt(), ME["height"].ToInt());
+				MY->treeView->show();
+			@cpp
+			return true
+
+		addNode title nodeId
+			nodePtr = nodeId.getNode()
+			resNodePtr = 0
+			cpp@			
+				void* result = 0;
+				if (MY->treeView)
+				{
+					QStandardItem* item = new QStandardItem(title.ToString().c_str());
+					if (nodePtr.ToPtr() == NULL)
+					{
+						MY->model->appendRow(item);
+					}
+					else
+					{
+						QStandardItem* parent = (QStandardItem*)nodePtr.ToPtr();
+						parent->appendRow(item);
+					}
+					result = (void*)item;
+				}
+				resNodePtr = result;
+			@cpp
+			nodeId = CTreeViewItemId
+			nodeId.setNode(resNodePtr)
+			result.result = nodeId
+			result.success = true
+			                
+		expandAll
+			cpp@
+				if (MY->treeView)
+				{
+					MY->treeView->expandAll();
+				}
+			@cpp

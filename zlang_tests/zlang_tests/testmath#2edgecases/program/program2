@@ -1,0 +1,72 @@
+
+EntryPoint
+	public
+		run     
+			a = 1
+			a += false
+			print("1 += false = ")
+			println(a)
+			b = 1
+			b -= false
+			print("1 -= false = ")
+			println(b)
+			b *= 'a'
+			print("1 *= 'a' = ")
+			println(b)
+			b /= true
+			print("97 /= true = ")
+			println(b)
+			cTrue = true
+			a = b * cTrue
+			print("97 * true = ")
+			println(a)
+			a = b + '0'
+			print("97 + '0' = ")
+			println(a)
+			b = 400
+			a = b / '0'
+			print("400 / '0' = ")
+			println(a)
+			b = 4
+			a = b - cTrue
+			print("4 - true = ")
+			println(a)
+			a = 4
+			cFalse = false
+			a *= cFalse
+			print("4 *= false = ")
+			println(a)
+			a = 5 ^ cFalse
+			print("5 ^ false = ")
+			println(a)
+			a = 4
+			a = a ^ '1'
+			print("4(a) ^ '1' = ")
+			println(a)
+			a = 3
+			a ^= '2'
+			print("3 ^= '2' = ")
+			println(a)
+			a = 5 | cTrue
+			print("5 | true = ")
+			println(a)
+			a = 4
+			a = a | '6'
+			print("4(a) | '6' = ")
+			println(a)
+			a = 3
+			a |= '6'
+			print("3 |= '6' = ")
+			println(a)
+			a = 5 & cFalse
+			print("5 & false = ")
+			println(a)
+			a = 4
+			a = a & 'a'
+			print("4(a) & 'a' = ")
+			println(a)
+			a = 3
+			a &= 'b'
+			print("3 &= 'b' = ")
+			println(a)
+			return true

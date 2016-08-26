@@ -1,0 +1,13 @@
+Attempt to read 200 bytes from file input.bin, but read with success only 26 bytes after line 7 in EntryPoint::run
+Attempt to use negative offset of variable to construct from binary file array after line 11 in EntryPoint::run
+Attempt to use out of range block of binary file array to construct after line 13 in EntryPoint::run
+Attempt to use unsupported size of numeric variable to construct from binary file array after line 15 in EntryPoint::run
+Attempt to use negative size of string variable to construct from binary file array after line 17 in EntryPoint::run
+Attempt to use out of range block of binary file array to construct after line 19 in EntryPoint::run
+Attempt to use unsupported size of float variable to construct from binary file array after line 21 in EntryPoint::run
+Attempt to use out of range block of binary file array to construct after line 23 in EntryPoint::run
+Attempt to add boolean value of unsupported size to binary array after line 28 in EntryPoint::run
+Attempt to add numeric value of unsupported size to binary array after line 40 in EntryPoint::run
+Attempt to add numeric value of unsupported size to binary array after line 44 in EntryPoint::run
+Attempt to add float value of unsupported size to binary array after line 52 in EntryPoint::run
+Attempt to add float value of unsupported size to binary array after line 56 in EntryPoint::run

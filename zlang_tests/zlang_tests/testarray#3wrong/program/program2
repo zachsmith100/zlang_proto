@@ -1,0 +1,13 @@
+
+EntryPoint
+	public
+		run
+			arr = Array
+			arr[] = 3
+			b = arr[]
+			b[i] = 1
+			c = arr.length()
+			b[ arr[] ] = 3
+
+			return true
+

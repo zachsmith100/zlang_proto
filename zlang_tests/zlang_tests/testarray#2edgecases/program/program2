@@ -1,0 +1,115 @@
+
+EntryPoint
+	public
+		funcWithInternalError1 arr
+			arr.remove(0 - 1)
+			return true
+
+		funcWithInternalError2 arr
+			arr.remove(10)
+			return true
+
+		funcWithInternalError3 arr
+			arr.remove("some string")
+			return true
+
+		funcWithInternalError4 arr
+			arr.paste(0 - 1 0)
+			return true
+
+		funcWithInternalError5 arr
+			arr.paste(10 0)
+			return true
+
+		funcWithInternalError6 arr
+			arr.paste("world" 0)
+			return true
+
+		funcWithError1 arr
+			print("1: ")
+			println(arr[0 - 1])
+			return true
+
+		funcWithError2 arr
+			print("2: ")
+			println(arr[0]) 
+			return true
+
+		funcWithError3 arr
+			print("3: ")
+			println(arr[10]) 
+			return true
+
+		funcWithError4 arr
+			print("4: ")
+			b = "stringindex"
+			println(arr[b])    
+			return true
+
+		funcWithError5 arr
+			print("5: ")
+			println(arr[arr])
+			return true
+
+		funcWithError6 arr tmpClass
+			print("6: ")
+			println(arr[tmpClass]) 
+			return true
+
+		funcWithError7 arr
+			print("7: ")
+			c = arr[0]
+			println(c[0]) 
+			return true
+
+		funcWithError8 arr
+			print("8: ")
+			arr[-1] = 3
+			return true
+
+		funcWithError9 arr
+			println(arr)
+			return true
+
+		run
+			tmpClass = EntryPoint
+
+			arr = Array
+			arr.length = 2
+			println(arr.length)
+			arr.push(7)
+			arr.push(9)
+
+			print("I/1: ")
+			println(me.funcWithInternalError1(arr).object.success)
+			print("I/2: ")
+			println(me.funcWithInternalError2(arr).object.success)
+			print("I/3: ")
+			println(me.funcWithInternalError3(arr).object.success)
+
+			print("I/4: ")
+			println(me.funcWithInternalError4(arr).object.success)
+			print("I/5: ")
+			println(me.funcWithInternalError5(arr).object.success)
+			print("I/6: ")
+			println(me.funcWithInternalError6(arr).object.success)
+			arr.paste(0 tmpClass)
+
+			println(me.funcWithError1(arr).object.success)
+			println(me.funcWithError2(arr).object.success)
+			println(me.funcWithError3(arr).object.success)
+			println(me.funcWithError4(arr).object.success)
+			println(me.funcWithError5(arr).object.success)
+			println(me.funcWithError6(arr tmpClass).object.success)
+			println(me.funcWithError7(arr).object.success)
+
+			arr[] = arr
+			println(me.funcWithError9(arr).object.success)
+
+			println(me.funcWithError8(arr).object.success)
+
+			arr[2] = 2
+			println(me.funcWithError9(arr).object.success)
+
+			return true
+

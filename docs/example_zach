@@ -1,0 +1,18 @@
+Someclass
+	private
+		a = 100.1			// 100% private
+	public
+		d = "some public var"		// 100% public
+
+		somemethod
+			me.c = 3		// private?
+			return true
+
+EntryPoint
+	public
+		run
+			obj = Someclass
+			// if we uncomment next line, will 'c' be private? 
+			// obj.c = 4
+			obj.b = 2		// public?
+			obj.somemethod

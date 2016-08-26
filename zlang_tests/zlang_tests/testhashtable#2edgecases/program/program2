@@ -1,0 +1,80 @@
+
+EntryPoint
+	public
+		callSomeMethod
+			println("some method to get a chance to compile unknown method call to hashtable value")
+			return true
+
+		run
+			map = Hashtable
+			println (map.length)
+
+			map[map] = 3
+			map["hello"] = "world"
+			map[true] = false
+
+			println(map)
+
+			map.removeKey(map)
+			map.removeKey("hello")
+			map.removeKey(true)
+			map.removeKey(1)
+			map.removeKey(10)
+
+			println (map.length)
+
+			b = map.keyExists("hello")
+			println(b)
+			b = map.keyExists("world")
+			println(b)
+
+			map[map] = map
+			map.removeKey(map)
+			println (map.length)
+
+			map.length = -10
+			println(map.length)
+
+			map.length = 1000
+			println(map.length)
+
+			map[1] = 2
+			map[3] = 4
+			map[5] = 6
+			map[7] = 8
+
+			foreach pair in map
+				if pair.key == 1
+					println(pair.name)
+					println(pair.callSomeMethod())
+				println(pair.key)
+				pair.key = 1
+				println(pair.key)
+				println(pair.value)
+				map.removeKey(pair.key)
+				println(pair.value)
+
+			map[1] = 2
+			map[3] = 4
+			map[5] = 6
+			map[7] = 8
+
+			foreach pair in map
+				println(pair.value)
+				break
+				println(pair.value)
+
+			map = Hashtable
+			map[1] = 2
+			map[3] = 4
+			map[5] = 6
+			map[7] = 8
+
+			foreach pair in map
+				println(pair.value)
+				map.clear()
+				println(pair.value)
+			
+			return true
+
+			

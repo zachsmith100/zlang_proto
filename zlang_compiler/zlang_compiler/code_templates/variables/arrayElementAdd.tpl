@@ -1,0 +1,1 @@
+[[arrayName]].CallMethod__(4, __FUNC_ENUM__push, false, 0, (CUniVar()).GetPtr()); [[arrayName]] [ [[arrayName]]->GetProperty__(0, __PROP_ENUM__length) - CUniVar(1) ]

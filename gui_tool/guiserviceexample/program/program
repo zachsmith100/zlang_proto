@@ -1,0 +1,86 @@
+@a
+	description: "First number for adding"
+	editor: slider
+	min: 0
+	max: 10
+@b
+	description: "Second number for adding"
+	editor: slider
+	min: 0
+	max: 20
+
+addNumbers a b
+	sum = a + b
+	result.result = Object
+	result.result.sum = sum
+	result.success = true
+
+@a
+	description: "First number for multiplication"
+	editor: spinbox
+	min: 0
+	max: 15
+@b
+	description: "Second number for multiplication"
+	editor: spinbox
+	min: 0
+	max: 15
+
+mulNumbers a b
+	sum = a * b
+	result.result = Object
+	result.result.sum = sum
+	result.success = true
+
+CTestService
+	private
+		getYear date (out)year
+			dateArr = String.Explode(date "-")
+			year = 0
+			for i = 0; i < dateArr.length; i++
+				candidate = 0 + dateArr[i]
+				year = (year < candidate) ? candidate : year
+			return true
+
+		isNonEmpty value 
+			result.success = (value.length > 0)
+			result.result = Object
+			result.result.errorText = "Value '[name]' must be non empty"
+
+		isDateValid value 
+			result.result = Object
+			result.result.errorText = "Date '[name]' must contain no digit '9'"
+			result.success = (String.Find(value "9") == -1)
+
+	public
+		@startDate
+			description: "Start date"
+			editor: date
+			validators: isDateValid isNonEmpty
+		@endDate
+			description: "End date"
+			editor: date
+			validators: isDateValid isNonEmpty
+		@name
+			description: "Name of root element"
+			validators: isNonEmpty
+
+		getYearsList startDate endDate name
+			me.getYear(startDate startYear)
+			me.getYear(endDate endYear)
+			if (startYear < endYear)
+				h = Hashtable
+				yearsList = Array
+				h[name] = yearsList
+				for i = startYear; i <= endYear; i++
+					yearsList[] = i
+				result.result = h
+				result.success = true
+
+singleton EntryPoint
+	public
+		run
+			testService = CTestService
+			result.result = testService.getYearsList("2013-10-01" "2015-01-02" "years")
+			println(result.result)
+			return true

@@ -1,0 +1,27 @@
+Let's make two commands to work with reading json and standard types:
+
+- read - read simple type (int, double, string, etc) or json and _REPLACE_ object content by new content.
+- append - read simple type (int, double, string, etc) or json and _ADD_ new content to content of object. Source object type will be _NOT_ changed by 'append'
+
+Examples:
+1) a = 1
+append a // input 2
+print a // output 3
+2) a = "hello "
+append a // input "world"
+print a // output "hello world"
+3) a->name = "Bill";
+append a // input {"b":2}
+print a // output {"name":"Bill", "b":2}
+4) a->name = "Bill";
+append a // input 2
+print a // output {"name":"Bill"} because we cannot append without change of type
+5) a->name = "Bill";
+read a // input {"b":2}
+print a // output {"b":2}
+6) a = 3;
+read a // input {"b":2}
+print a // output {"b":2}
+7) a->name = "Bill";
+read a // input 2
+print a // output 2

@@ -1,0 +1,1 @@
+[[objectName]]->GetProperty__(1, __PROP_ENUM__[[propertyName]])[[end]]

@@ -1,0 +1,432 @@
+==========
+1
+==========
+[[[[[[ 1,2
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ 1,1
+< false
+<= true
+== true
+!= false
+> false
+>= true
+{}
+[[[[[[ 1,2
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ 1.1,1
+< false
+<= false
+== false
+!= true
+> true
+>= true
+{}
+[[[[[[ 1,2.2
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ "1",1
+< false
+<= true
+== true
+!= false
+> false
+>= true
+{}
+[[[[[[ 1,"2"
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ false,1
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ 1,true
+< false
+<= true
+== true
+!= false
+> false
+>= true
+{}
+==========
+2.200000
+==========
+[[[[[[ 2.200000,2
+< false
+<= false
+== false
+!= true
+> true
+>= true
+{}
+[[[[[[ 1,2.200000
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ 2.200000,2
+< false
+<= false
+== false
+!= true
+> true
+>= true
+{}
+[[[[[[ 1.1,2.200000
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ 2.200000,2.2
+< false
+<= true
+== true
+!= false
+> false
+>= true
+{}
+[[[[[[ "1",2.200000
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ 2.200000,"2"
+< false
+<= false
+== false
+!= true
+> true
+>= true
+{}
+[[[[[[ false,2.200000
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ 2.200000,true
+< false
+<= false
+== false
+!= true
+> true
+>= true
+{}
+==========
+2
+==========
+[[[[[[ 2,2
+< false
+<= true
+== true
+!= false
+> false
+>= true
+{}
+[[[[[[ 1,2
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ 2,2
+< false
+<= true
+== true
+!= false
+> false
+>= true
+{}
+[[[[[[ 1.1,2
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ 2,2.2
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ "1",2
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ 2,"2"
+< false
+<= true
+== true
+!= false
+> false
+>= true
+{}
+[[[[[[ false,2
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ 2,true
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+==========
+true
+==========
+[[[[[[ true,2
+< false
+<= true
+== true
+!= false
+> false
+>= true
+{}
+[[[[[[ 1,true
+< false
+<= true
+== true
+!= false
+> false
+>= true
+{}
+[[[[[[ true,2
+< false
+<= true
+== true
+!= false
+> false
+>= true
+{}
+[[[[[[ 1.1,true
+< false
+<= false
+== false
+!= true
+> true
+>= true
+{}
+[[[[[[ true,2.2
+< false
+<= true
+== true
+!= false
+> false
+>= true
+{}
+[[[[[[ "1",true
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ true,"2"
+< false
+<= true
+== true
+!= false
+> false
+>= true
+{}
+[[[[[[ false,true
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ true,true
+< false
+<= true
+== true
+!= false
+> false
+>= true
+{}
+==========
+false
+==========
+[[[[[[ false,2
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ 1,false
+< false
+<= false
+== false
+!= true
+> true
+>= true
+{}
+[[[[[[ false,2
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ 1.1,false
+< false
+<= false
+== false
+!= true
+> true
+>= true
+{}
+[[[[[[ false,2.2
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ "1",false
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ false,"2"
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ false,false
+< false
+<= true
+== true
+!= false
+> false
+>= true
+{}
+[[[[[[ false,true
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+==========
+a
+==========
+[[[[[[ a,2
+< false
+<= false
+== false
+!= true
+> true
+>= true
+{}
+[[[[[[ 1,a
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ a,2
+< false
+<= false
+== false
+!= true
+> true
+>= true
+{}
+[[[[[[ 1.1,a
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ a,2.2
+< {}
+[[[[[[ "1",a
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ a,"2"
+< {}
+[[[[[[ false,a
+< true
+<= true
+== false
+!= true
+> false
+>= false
+{}
+[[[[[[ a,true
+< {}

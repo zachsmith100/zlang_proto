@@ -1,0 +1,55 @@
+unix::include "unistd.h"
+unix::include "sys/time.h"
+windows::include "windows.h"
+
+CTimer
+	public
+		getTickCount (out)ticks
+			ticks = 0
+			cpp@
+				#ifdef WIN32
+					ticks = GetTickCount();
+				#else
+					struct timeval tv;
+				        ticks = (gettimeofday(&tv, NULL) != 0) ? 0 : (tv.tv_sec * 1000) + (tv.tv_usec / 1000);
+				#endif
+			@cpp
+			return true
+
+		start
+			me.getTickCount(me.startTime)
+			return true
+
+		end
+			me.getTickCount(me.endTime)
+			return true
+
+		getElapsedTime (out)time
+			if (me.endTime == 0)
+				me.end()
+			time = me.endTime - me.startTime
+			return true
+
+		sleep ms
+			cpp@
+				#ifdef WIN32
+				    Sleep(ms.ToInt());
+				#else
+				    usleep(ms.ToInt() * 1000);
+				#endif
+			@cpp
+			return true
+
+EntryPoint
+	public
+		run
+			t = CTimer
+			t.start()
+			for i = 0; i < 10; i++
+				t.sleep(i)
+			t.end()
+			t.getElapsedTime(delta)
+			println(delta != 0)
+
+			return true
+

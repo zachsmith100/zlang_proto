@@ -1,0 +1,49 @@
+
+int friendCircles(vector < string > friends)
+{
+    typedef set<int> circle;
+    set<circle> circles;
+    set<int> circled;
+    int friendCount = friends.size();
+
+    for(int i = 0; i < friendCount; i++)
+    {
+        if(circled.find(i) == circled.end())
+        {
+            circle myCircle;
+            stack<int> friendStack;
+
+            friendStack.push(i);
+
+            while(!friendStack.empty())
+            {
+                int current = friendStack.top();
+                friendStack.pop();
+                const string & row = friends[current];
+
+                myCircle.insert(current);
+                circled.insert(current);
+
+                for(int j = 0; j < friendCount; j++)
+                {
+                    if(circled.find(j) == circled.end())
+                    {
+                        if(row[j] == 'Y')
+                        {
+                            if(myCircle.find(j) == myCircle.end())
+                            {
+                                myCircle.insert(j);
+                                circled.insert(j);
+                                friendStack.push(j);
+                            }
+                        }
+                    }
+                }
+            }
+
+            circles.insert(myCircle);
+        }
+    }
+
+    return circles.size();
+}

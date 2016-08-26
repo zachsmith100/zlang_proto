@@ -1,0 +1,8 @@
+[["new1","new","1"],["rio3","rio","3"],["yoshkar8","yoshkar","8"],["baden4","baden","4"]]
+1new 3rio 8yoshkar 4baden
+true
+[["abc","abc"]]
+[["abc","abc"]]
+[["abc","abc"],["AbC","AbC"],["ABC","ABC"]]
+[["123"],["5"],["234"]]
+[["123","123"],["5","5"],["234","234"]]

@@ -1,0 +1,1 @@
+[[instanceName]] = new [[className]]()[[end]]

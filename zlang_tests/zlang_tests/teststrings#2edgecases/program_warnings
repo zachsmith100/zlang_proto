@@ -1,0 +1,16 @@
+Function EntryPoint::find1 interrupted after line 4: Attempt to use out of range index for access symbol in string
+Function EntryPoint::find2 interrupted after line 8: Attempt to use out of range index for access symbol in string
+Function EntryPoint::find3 interrupted after line 12: Attempt to use out of range index for access symbol in string
+Function EntryPoint::find4 interrupted after line 16: Attempt to use out of range index for access symbol in string
+Function EntryPoint::find5 interrupted after line 20: Attempt to use out of range index for access symbol in string
+Attempt to erase using wrong index from string  after line 52 in EntryPoint::find5
+Attempt to erase using wrong index from string  after line 54 in EntryPoint::find5
+Attempt to erase using wrong index or count from string  after line 55 in EntryPoint::find5
+Attempt to erase using wrong index or count from string  after line 56 in EntryPoint::find5
+Attempt to erase using wrong index or count from string world after line 59 in EntryPoint::find5
+Attempt to replace empty string by another string after line 63 in EntryPoint::find5
+Attempt to insert using wrong index to string world after line 65 in EntryPoint::find5
+Attempt to get substring using wrong index or count from string world after line 68 in EntryPoint::find5
+Attempt to erase using wrong index from string exampl after line 75 in EntryPoint::find5
+Attempt to explode empty string after line 85 in EntryPoint::find5
+Attempt to explode string using empty delimeter after line 89 in EntryPoint::find5

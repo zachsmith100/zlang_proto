@@ -1,0 +1,5 @@
+
+#pragma once
+
+#define DEFAULT_PRECISION	128
+#define DEFAULT_DOUBLE_TYPE UV_DOUBLE

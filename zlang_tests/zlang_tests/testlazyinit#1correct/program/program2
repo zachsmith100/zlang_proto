@@ -1,0 +1,260 @@
+logInfo op val
+	print(op)
+	print(" => ")
+	print(typeof(val))
+	print(" [")
+	print(val)
+	println("]")
+	return true
+
+EntryPoint
+	public
+		run
+			a = 1.1
+			// it is normal to save integer to double
+			a = 1
+			println(a)
+
+			a1++
+			logInfo("++" a1)
+			a2--
+			logInfo("--" a2)
+			a3 += 2
+			logInfo("+=" a3)
+			a4 *= 2
+			logInfo("*=" a4)
+			a5 /= 2
+			logInfo("/=" a5)
+			a6 -= 2
+			logInfo("-=" a6)
+			a7 ^= 101
+			logInfo("^=" a7)
+			a8 |= 101
+			logInfo("|=" a8)
+			a9 &= 101
+			logInfo("&=" a9)
+
+			b1 = a3 + 1
+			logInfo("int + 1" b1)
+			b2 = a3 * 2
+			logInfo("int * 2" b2)
+			b3 = a3 / 2
+			logInfo("int / 2" b3)
+			b4 = a3 - 9
+			logInfo("int - 9" b4)
+
+			c1[] = 1
+			logInfo("[]" c1)
+			c2.push(1)
+			logInfo("push" c2)
+			c3.removeAll()
+			logInfo("removeAll" c3)
+			c4.resize(2)
+			logInfo("resize" c4)
+			cc5 = c5.implode(",")
+			logInfo("implode" cc5)
+			c6.paste(0 "a")
+			logInfo("paste" c6)			
+			c7.extractNumeric(0 4)
+			logInfo("extractNumeric" c7)
+			c8.extractFloat(0 4)
+			logInfo("extractFloat" c8)
+			c9.extractBoolean(0 1)
+			logInfo("extractBoolean" c9)
+			c10.extractString(0 4)
+			logInfo("extractString" c10)
+			c11.binarizeNumeric(0 4)
+			logInfo("binarizeNumeric" c11)
+			c12.binarizeFloat(0.0 4)
+			logInfo("binarizeFloat" c12)
+			c13.binarizeBoolean(false 1)
+			logInfo("binarizeBoolean" c13)
+			c14.binarizeString("abcd")
+			logInfo("binarizeString" c14)
+			c15.cut(0 1)
+			logInfo("cut" c15)
+			c16.remove(0)
+			logInfo("remove" c16)
+			c17.indexOf('a')
+			logInfo("indexOf" c17)
+			c18.indexFirstOf('a')
+			logInfo("indexFirstOf" c18)
+			c19.indexLastOf('a')
+			logInfo("indexLastOf" c19)
+
+			logInfo("[nop]" d1)
+			d2.x = 1
+			logInfo(".x" d2)
+			tmp999 = d3.length
+			logInfo(".length" d3)
+			d4.convertable("object")
+			logInfo("convertable" d4)
+			d5.clone()
+			logInfo("clone" d5)
+			print(d6)
+			logInfo("print" d6)
+			println(d7)
+			logInfo("println" d7)
+			if (d8.convertable("object") == true)
+				print("checked")
+			logInfo("convertable if" d8)
+			if (d9 != 10)
+				print("checked")
+			logInfo("if" d9)
+
+			e1["hello"] = "world"
+			logInfo("[\"hello\"]" e1)
+			e2.keyExists("key")
+			logInfo("keyExists" e2)
+			e3.removeKey("key")
+			logInfo("removeKey" e3)
+			e4.getValues()
+			logInfo("getValues" e4)
+			e5.keyExists("getKeys")
+			logInfo("getKeys" e5)
+			e6.clear()
+			logInfo("clear" e6)
+
+			f1 .= "end"
+			logInfo(".=" f1)
+			f2 += "end"
+			logInfo("+=" f2)
+			String.Trim(f3)
+			logInfo("trim" f3)
+			String.LeftTrim(f4)
+			logInfo("ltrim" f4)
+			String.RightTrim(f5)
+			logInfo("rtrim" f5)
+			String.Replace(f6 "1" "2")
+			logInfo("replace" f6)
+			String.Explode(f7 ".")
+			logInfo("explode" f7)
+			String.SubString(f8 0 1)
+			logInfo("substr" f8)
+			String.RegexMatch(f9 "[0-9]")
+			logInfo("regexMatch" f9)
+			String.RegexSearch(f10 "[0-9]")
+			logInfo("regexSearch" f10)
+			String.RegexReplace(f11 "[0-9]" "!")
+			logInfo("regexReplace" f11)
+			options = Object
+			options.icase = false
+			String.RegexMatch(f12 "[0-9]" options)
+			logInfo("regexMatch+" f12)
+			String.RegexSearch(f13 "[0-9]" options)
+			logInfo("regexSearch+" f13)
+			String.RegexReplace(f14 "[0-9]" "!" options)
+			logInfo("regexReplace+" f14)
+			String.Erase(f15 0)
+			logInfo("erase" f15)
+			f16 = String.Insert(f16 0 'a')
+			logInfo("insert" f16)
+			String.Find(f17 'a')
+			logInfo("find" f17)
+			String.FindFirstOf(f18 'a')
+			logInfo("findFirstOf" f18)
+			String.FindFirstOf(f19 'a' 1)
+			logInfo("findFirstOf" f19)
+			String.FindLastOf(f20 'a')
+			logInfo("findLastOf" f20)
+			String.FindLastOf(f21 'a' 1)
+			logInfo("findLastOf" f21)
+
+			g1 ^= false
+			logInfo("^=" g1)
+			g2 |= false
+			logInfo("|=" g2)
+			g3 &= false
+			logInfo("&=" g3)
+			g4 *= true
+			logInfo("^=" g4)
+			g5 /= true
+			logInfo("^=" g5)
+			g6 += true
+			logInfo("|=" g6)
+			g7 -= true
+			logInfo("&=" g7)
+
+			h3 += 2.1
+			logInfo("+=" h3)
+			h4 *= 2.1
+			logInfo("*=" h4)
+			h5 /= 2.1
+			logInfo("/=" h5)
+			h6 -= 2.1
+			logInfo("-=" h6)
+			h10 = h3 + 1
+			logInfo("int + 1" h10)
+			h11 = h3 * 2
+			logInfo("int * 2" h11)
+			h12 = h3 / 2
+			logInfo("int / 2" h12)
+			h13 = h3 - 9
+			logInfo("int - 9" h13)
+			h14 = a3 + 1.0
+			logInfo("int + 1.0" h14)
+			h15 = a3 * 2.0
+			logInfo("int * 2.0" h15)
+			h16 = a3 / 2.0
+			logInfo("int / 2.0" h16)
+			h17 = a3 - 9.0
+			logInfo("int - 9.0" h17)
+
+			k3 += 'a'
+			logInfo("+=" k3)
+			k4 *= 'a'
+			logInfo("*=" k4)
+			k5 /= 'a'
+			logInfo("/=" k5)
+			k6 -= 'a'
+			logInfo("-=" k6)
+			k7 ^= 'a'
+			logInfo("^=" k7)
+			k8 |= 'a'
+			logInfo("|=" k8)
+			k9 &= 'a'
+			logInfo("&=" k9)
+
+			l1 += ~2.21212121213434343434565656565656
+			logInfo("+=" l1)
+			l2 -= ~2.21212121213434343434565656565656
+			logInfo("-=" l2)
+			l3 /= ~2.21212121213434343434565656565656
+			logInfo("/=" l3)
+			l4 *= ~2.21212121213434343434565656565656
+			logInfo("*=" l4)
+			Number.Abs(l5)
+			logInfo("Abs" l5)
+			Number.Sin(l6)
+			logInfo("Sin" l6)
+			Number.Cos(l7)
+			logInfo("Cos" l7)
+			Number.Tan(l8)
+			logInfo("Tan" l8)
+			Number.Pow(l10 l11)
+			logInfo("Pow" l10)
+			logInfo("Pow" l11)
+			Number.Exp(l14)
+			logInfo("Exp" l14)
+			Number.Sqrt(l15)
+			logInfo("Sqrt" l15)
+			Number.Asin(l16)
+			logInfo("Asin" l16)
+			Number.Acos(l17)
+			logInfo("Acos" l17)
+			Number.Atan(l18)
+			logInfo("Atan" l18)
+			Number.Actg(l19)
+			logInfo("Actg" l19)
+			Number.Round(l20)
+			logInfo("Round" l20)
+			Number.Truncate(l21)
+			logInfo("Truncate" l21)
+			Number.Ceil(l22)
+			logInfo("Ceil" l22)
+			Number.Floor(l23)
+			logInfo("Floor" l23)
+			Number.Fraction(l24)
+			logInfo("Fraction" l24)
+
+			return true

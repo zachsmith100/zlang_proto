@@ -1,0 +1,53 @@
+
+EntryPoint
+	public
+		run
+			arr = Array
+			// some initialization, approach for initialization doesn't matter, so we fill array with hard-coded values
+			arr.push(6)
+			arr[] = 4
+			arr.push(7)
+			arr[] = 2
+			arr.push(3)
+			arr[] = 10
+			arr.push(22)
+			arr[] = 0
+
+			// for this cycle we need to have sequential order of indices, first index = 0.
+
+			b = true
+
+			for i = 0; i < arr.length; i++
+				if arr[i] < 10
+					arr.remove(i)
+					i--
+
+			// ok, after removing we still have sequential order of indices, first index = 0 in array
+			// if we replace array by hashtable, first index will be 1, order of indices will be non-sequential
+			// sort will be impossible
+
+			for i = 0; i < arr.length - 1; i++
+				for k = i + 1; k < arr.length; k++
+					if (arr[i] > arr[k])
+						tmp = arr[i]
+						arr[i] = arr[k]
+						arr[k] = tmp
+
+			// ok, sorting is only one of problems
+			// now I want to print elements of array with odd indices
+			// i can do it in efficient manner with array, but not with hashtable
+			for i = 0; i < arr.length; i += 2
+				println(arr[i])
+
+			// now I want to add some element to the end of array (it must have new index = max index + 1)
+			// oh, it is very complex problem with hashtable
+			arr[] = 3
+
+			// with array I can sure that after some logic error I will have still an array
+			// but with hashtable I will broke indices
+			//			arr["hello"] = "world"
+
+			println(arr)
+
+			return true
+

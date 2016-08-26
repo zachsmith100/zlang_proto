@@ -1,0 +1,1 @@
+GetProperty__([[callStatus]], __PROP_ENUM__[[name]]) = new [[value]]Proto();

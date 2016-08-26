@@ -1,0 +1,13 @@
+Start compiler 
+Fatal error in <some file> at line 24! Attempt to create instance c1 of singleton class SomeClass 
+Fatal error in <some file> at line 25! Attempt to create instance  of singleton class SomeClass 
+Fatal error in <some file> at line 27! Attempt to create instance  of singleton class SomeClass 
+Fatal error in <some file> at line 29! Attempt to create instance  of singleton class SomeClass 
+Fatal error in <some file> at line 31! Attempt to create instance  of singleton class SomeClass 
+Fatal error in <some file> at line 34! Attempt to create instance  of singleton class SomeClass 
+Fatal error in <some file> at line 39! Attempt to create instance  of singleton class SomeClass 
+Fatal error in <some file> at line 41! Attempt to create instance  of singleton class SomeClass 
+Fatal error in <some file> at line 43! Attempt to create instance  of singleton class SomeClass 
+Code generation was FAILED with fatal errors: 9
+
+End compiler 

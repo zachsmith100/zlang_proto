@@ -1,0 +1,46 @@
+
+include "emptywindow.h"
+include "ui_emptywindow.h"
+add "emptywindow.cpp"
+add "moc_emptywindow.cpp"
+
+CWindow : cppinherit(public EmptyWindow)
+	public
+		onCreated
+			cpp@
+				MY->setWindowTitle(ME["title"].ToString().c_str());
+			@cpp
+			return true
+
+		fixSize width height
+			cpp@
+				MY->setFixedSize(width.ToInt(), height.ToInt());
+			@cpp
+			return true
+
+		getHandle
+			handle = 0
+			cpp@
+				handle = CUniVar((void*)MY);
+			@cpp
+			result.result = handle
+			result.success = true
+
+		showWindow
+			cpp@
+				MY->show();
+			@cpp
+			return true
+
+		hideWindow
+			cpp@
+				MY->hide();
+			@cpp
+			return true
+
+		cpp@
+			void OnCloseHandler()
+			{
+				this->Call("onClose");
+			}
+		@cpp

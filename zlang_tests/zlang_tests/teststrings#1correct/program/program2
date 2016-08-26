@@ -1,0 +1,54 @@
+
+EntryPoint
+	public
+		run
+			str = "  some initial string "
+			str = String.LeftTrim(str)
+			println(str)
+
+			str = "  some initial string  "
+			str = String.RightTrim(str)
+			println(str)
+
+			str = "  some  initial string  "
+			str = String.Trim(str)
+			println(str)
+
+			println(str.length)
+
+			str .= " world "
+
+			println(String.Find(str "w"))
+			println(String.Find(str "tial"))
+
+			println(String.FindFirstOf(str "s"))
+			println(String.FindFirstOf(str "s" 10))
+
+			println(String.FindLastOf(str "s"))
+			println(String.FindLastOf(str "s" 15))
+
+			str = String.Erase(str 0)
+			println(str)
+
+			str = String.Erase(str 1 3)
+			println(str)
+
+			str = String.Replace(str "initial" "wrong")
+			println(str)
+
+			str = String.Insert(str 10 "!!!")
+			println(str)
+
+			str = String.SubString(str 5 10)
+			println(str)
+
+			str = "string*with*symbol*delimeter"
+			arr = String.Explode(str "*")
+			println(arr)
+
+			str = "string/*/with/*/string/*/deli/meter"
+			arr = String.Explode(str "/*/")
+			println(arr)
+
+			return true
+

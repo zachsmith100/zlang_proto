@@ -1,0 +1,9 @@
+Start compiler 
+Fatal error in <some file> at line 29! Attempt to use const value 10 as out parameter for method! 
+Fatal error in <some file> at line 33! Attempt to use const value "Hello" as out parameter for method! 
+Fatal error in <some file> at line 34! Attempt to use variable with same name as class name (EntryPoint) 
+Fatal error in <some file> at line 35! Attempt to use const value 10 as out parameter for method! 
+Fatal error in <some file> at line 40! Attempt to use const value 10 as out parameter for method! 
+Code generation was FAILED with fatal errors: 5
+
+End compiler 

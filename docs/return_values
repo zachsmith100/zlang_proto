@@ -1,0 +1,24 @@
+@return
+  defaultReturnField="someOutParam"
+checkIfDateCorrect dateStr
+     // some code
+     result.success = True
+     result.someOutVar = 1000
+
+More Examples:
+
+someFunc inputParam0
+    result.outParam0 = inputParam0 * 100
+
+anotherFunc inputParam0
+    if inputParam0 == "Hello, World!"
+        return True # implied result.success = True
+
+    return False
+
+returnSomethingFunc inputParam0
+    return True, inputParam0 # implied result.inputParam0 = inputParam0, result.success = True
+
+anotherReturnSomethingFunc inputParam0
+    result.outputParam0 = inputParam0
+    result.success = False

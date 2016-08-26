@@ -1,0 +1,7 @@
+
+EntryPoint
+	public
+		run
+			a = Float<-128>(0)
+			return true
+

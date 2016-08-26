@@ -1,0 +1,5 @@
+Start compiler 
+Fatal error in <some file> at line 5! Precision (current value = -128) must be positive integer >= 16! 
+Code generation was FAILED with fatal errors: 1
+
+End compiler 

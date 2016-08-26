@@ -1,0 +1,1 @@
+[[objectName]]::[[methodName]]([[methodParams]])[[end]]

@@ -1,0 +1,31 @@
+
+1)
+a = Someclass
+b = Hashtable
+b[a] = 1	// all is ok.
+print(b)	// oh! we need to convert to json key and key is not simple type...
+
+2) 
+a = Hashtable
+// ...
+foreach (pair in a)		// trivial
+{
+	print(pair.name)
+	print(pair.value)
+}
+foreach (pair in a)		// and nightmare for __high quality and high performance__ implementation
+{
+	if pair.value % 3 = 1
+		a.RemoveKey(pair.name)
+	if pair.value % 5 = 3
+		a[pair.value] = pair.name // add something else
+}
+
+for 2) I can suggest some approaches
+
+a) Copy hashtable before traversal and make traversal for copy. All changes will be applied for real hashtable. It is clear for 
+zlang programmers approach and easy to implement but overhead can be significant
+b) Record all requests for changes in hashtable during loop(s). Apply changes only when last of possible inner loops using this hashtable
+are ended. 
+c) Prohibit any changes during foreach. Generally, it is inconvient for zlang programmers.
+d) Try to implement some magic algorythm which will be handle all changes on-the-fly. It is difficult and may be even... possible :)

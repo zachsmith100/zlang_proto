@@ -1,0 +1,32 @@
+
+CComboBox
+	public
+		cpp@
+			QComboBox* comboBox;
+		@cpp
+
+		onCreated
+			handle = me.wnd.getHandle()
+			name = CNamesGenerator.getName()
+			cpp@
+				CWindowProto* wndPtr = (CWindowProto*)handle.ToPtr();
+				MY->comboBox = new QComboBox(wndPtr);
+				MY->comboBox->setGeometry(ME["x"].ToInt(), ME["y"].ToInt(), ME["width"].ToInt(), ME["height"].ToInt());
+				MY->comboBox->setObjectName(name.ToString().c_str());
+				MY->comboBox->show();
+			@cpp
+			return true
+
+		addItem title
+			cpp@
+        	                MY->comboBox->addItem(title.ToString().c_str());
+			@cpp
+			return true
+
+		getSelectedItem 
+			item = ""
+			cpp@
+				item = MY->comboBox->currentText().toStdString();
+			@cpp
+			result.result = item
+			result.success = true

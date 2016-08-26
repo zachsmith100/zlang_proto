@@ -1,0 +1,315 @@
+
+SimpleTypeTests
+	public
+		testAll
+			me.testString()
+			me.testInt()
+			me.testUInt()
+			me.testDouble()
+			me.testBoolean()
+			me.testChar()
+			return true
+
+
+		testString
+			a = "Hello world"
+			b = ""
+			cpp@
+				printf("%s\n", a.ToString().c_str());
+				b = "success";
+			@cpp
+			println(b)
+			return true
+
+		testInt
+			a = 101
+			b = 0
+			cpp@
+				printf("%d\n", a.ToInt());
+				b = 56;
+			@cpp
+			println(b)
+			return true
+
+		testUInt
+			a = -101
+			b = 0
+			cpp@
+				printf("%lu\n", a.ToUInt());
+				b = -56;
+			@cpp
+			println(b)
+			return true
+
+		testDouble
+			a = 10.1
+			b = 0.0
+			cpp@
+				printf("%f\n", a.ToDouble() );
+				b = -5.6;
+			@cpp
+			println(b)
+			return true
+
+		testBoolean
+			a = true
+			b = false
+			cpp@
+				printf("%s\n", a.ToBoolean() ? "true" : "false");
+				b = true;
+			@cpp
+			println(b)
+			return true
+
+		testChar
+			a = 'a'
+			b = 'b'
+			cpp@
+				printf("%c\n", a.ToSymbol());
+				b = 'c';
+			@cpp
+			println(b)
+			return true
+
+
+ArrayTests
+	public
+		testAll
+			me.testArrayOfStrings()
+			me.testArrayOfInts()
+			me.testArrayOfUInts()
+			me.testArrayOfDoubles()
+			me.testArrayOfBooleans()
+			me.testArrayOfSymbols()
+			return true
+
+		testArrayOfStrings
+			z = Array
+			z[] = "hello"
+			z[] = "world"
+			cpp@
+				std::vector<std::string> arr = z.ToVector().OfString();
+				for (unsigned int i = 0; i < arr.size(); i++)
+				{
+					printf("%s\n", arr[i].c_str());
+				}
+			@cpp
+			return true
+
+		testArrayOfInts
+			z = Array
+			z[] = 5
+			z[] = -11
+			cpp@
+				std::vector<int> arr = z.ToVector().OfInt();
+				for (unsigned int i = 0; i < arr.size(); i++)
+				{
+					printf("%d\n", arr[i]);
+				}
+			@cpp
+			return true
+
+		testArrayOfUInts
+			z = Array
+			z[] = 1
+			z[] = -2
+			cpp@
+				std::vector<unsigned int> arr = z.ToVector().OfUInt();
+				for (unsigned int i = 0; i < arr.size(); i++)
+				{
+					printf("%lu\n", arr[i]);
+				}
+			@cpp
+			return true
+
+		testArrayOfDoubles
+			z = Array
+			z[] = 1.5
+			z[] = -3.3
+			cpp@
+				std::vector<double> arr = z.ToVector().OfDouble();
+				for (unsigned int i = 0; i < arr.size(); i++)
+				{
+					printf("%f\n", arr[i]);
+				}
+			@cpp
+			return true
+
+		testArrayOfBooleans
+			z = Array
+			z[] = true
+			z[] = false
+			cpp@
+				std::vector<bool> arr = z.ToVector().OfBoolean();
+				for (unsigned int i = 0; i < arr.size(); i++)
+				{
+					printf("%s\n", arr[i] ? "true" : "false");
+				}
+			@cpp
+			return true
+
+		testArrayOfSymbols
+			z = Array
+			z[] = 'o'
+			z[] = 'd'
+			cpp@
+				std::vector<char> arr = z.ToVector().OfSymbol();
+				for (unsigned int i = 0; i < arr.size(); i++)
+				{
+					printf("%c\n", arr[i]);
+				}
+			@cpp
+			return true
+
+ContainersTests
+	public
+		testAll
+			me.testLength()
+			me.testAccessToElements()
+			me.testClasses()
+			me.testJSON()
+			me.testWriteAccess()
+			return true
+
+		testLength
+			str = "hello"
+			arr = Array
+			arr[] = 1
+			arr[] = 2
+			hsh = Hashtable
+			hsh["new"] = "old"
+			hsh[4.1] = 7
+			cpp@
+				printf("%d %d %d\n", str.GetLength(), arr.GetLength(), hsh.GetLength());
+			@cpp
+			return true
+
+		testAccessToElements
+			str = "hello"
+			arr = Array
+			arr[] = 1.2
+			arr[] = 2.3
+			hsh = Hashtable
+			hsh["new"] = "old"
+			hsh[4.1] = 7
+			cpp@
+	                        double a = arr[1].ToDouble();
+				int b = hsh[4.1].ToInt();
+				char c = str[0];
+				printf("%f %d %c\n", a, b, c);
+				if (arr.IsSet(3))
+				{
+					printf("arr[3]\n");
+				}
+				if (arr.IsSet(1))
+				{
+					printf("arr[1]\n");
+				}
+				if (str.IsSet(10))
+				{
+					printf("str[10]\n");
+				}
+				if (str.IsSet(1))
+				{
+					printf("str[1]\n");
+				}
+				if (hsh.IsSet(4.1))
+				{
+					printf("hsh[4.1]\n");
+				}
+				if (hsh.IsSet("ne"))
+				{
+					printf("hsh[ne]\n");
+				}
+			@cpp
+			return true
+
+		testJSON
+			arr = Array
+			arr[] = 1.2
+			arr[] = 2.3
+			hsh = Hashtable
+			hsh["new"] = "old"
+			hsh[4.1] = 7
+			cls = Object
+			cls.id = 3
+			cls.title = "Object1"
+			cpp@
+				printf("array json: %s\n", arr.ToString().c_str());
+				printf("hashtable json: %s\n", hsh.ToString().c_str());
+				printf("object json: %s\n", cls.ToString().c_str());
+			@cpp
+			return true
+
+		testClasses
+			me.count = 1
+			me.title = "hello"
+			z = Object
+			z.len = 7
+			z.koef = 4.3
+			cpp@
+				printf("count = %d\n", ME["count"].ToInt());
+				printf("title = %s\n", ME["title"].ToString().c_str());
+				printf("len = %d\n", z["len"].ToInt());
+				printf("koef = %f\n", z["koef"].ToDouble());
+				if (ME.IsSet("count"))
+				{
+					printf("count exists\n");
+				}
+				if (ME.IsSet("caption"))
+				{
+					printf("caption exists\n");
+				}
+				if (z.IsSet("koef"))
+				{
+					printf("koef exists\n");
+				}
+				if (z.IsSet("count"))
+				{
+					printf("count exists\n");
+				}
+			@cpp
+			return true
+
+		testWriteAccess
+			arr = Array
+			arr[] = 11
+			arr[] = 5
+			arr[] = -18
+			cls = Object
+			cls.old_property = 88
+			cls.cnt = "huh"
+			hsh = Hashtable
+			hsh[90] = 2
+			hsh["hello"] = "somestring"
+			cpp@
+				int a = 8;
+				arr[1] = 2;
+				arr.Push(48);
+				arr.Remove(1);
+				cls.GetProperty("old_property") = 1;
+				cls.GetProperty("new_property") = 2;
+				cls.Remove("cnt");
+				hsh["hello"] = "1";
+				hsh.Remove("world");
+			@cpp
+			println(arr)
+			println(hsh)
+			println(cls)
+			return true
+
+
+EntryPoint
+	public
+		run
+			t1 = SimpleTypeTests
+			t1.testAll()
+
+			t2 = ArrayTests
+			t2.testAll()
+
+			t3 = ContainersTests
+			t3.testAll()
+
+			return true
+

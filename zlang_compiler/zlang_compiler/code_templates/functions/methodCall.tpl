@@ -1,0 +1,1 @@
+[[objectName]][[callOperator]]CallMethod__[[staticPostfix]]([[paramCount]], __FUNC_ENUM__[[methodName]], [[defaultResultStatus]], [[callStatus]][[methodParams]])[[resultFieldPlaceholder]][[end]]

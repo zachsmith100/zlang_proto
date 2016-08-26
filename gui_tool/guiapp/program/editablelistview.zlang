@@ -1,0 +1,51 @@
+
+CEditableListView
+	public
+		innerMargin = 5
+		buttonWidth = 30
+		buttonHeight = 25
+
+		onCreated
+			me.listView = CListView(wnd: me.wnd, x: me.x, y: me.y, width: me.width, height: me.height - me.buttonHeight - me.innerMargin)
+
+			buttonFullWidth = me.buttonWidth + me.innerMargin
+			buttonsWidth = buttonFullWidth * 2
+			baseOffsetX = me.width + me.x + me.innerMargin
+			buttonAddX = baseOffsetX - buttonsWidth 
+			buttonRemoveX = baseOffsetX - buttonFullWidth
+			y = me.y + me.height - me.buttonHeight
+
+			me.edit = CEdit(defaultValue: "", width: me.width - buttonsWidth, height: me.buttonHeight, wnd: me.wnd, x: me.x, y: y)
+
+			// it is workaround against QT bug in Mac OS X... first created button in this case will have white color caption
+			// and gray background. After first button creation color of caption will be changed to black
+			me.buttonWorkAround = CButton(title: "workaround", width: me.buttonWidth, height: me.buttonHeight, x: buttonRemoveX - 500, y: y, wnd: me.wnd)
+			me.buttonWorkAround.setVisible(false)
+
+			me.buttonAdd = CButton(title: "+", width: me.buttonWidth, height: me.buttonHeight, x: buttonAddX, y: y, wnd: me.wnd)
+			me.buttonAdd.onClick = me.onAddItem
+			me.buttonAdd.parent = me
+
+			me.buttonRemove = CButton(title: "-", width: me.buttonWidth, height: me.buttonHeight, x: buttonRemoveX, y: y, wnd: me.wnd)
+			me.buttonRemove.onClick = me.onRemoveItem			
+			me.buttonRemove.parent = me
+
+		onAddItem
+			newItem = me.parent.edit.getValue()
+			me.parent.listView.addItem(newItem)
+			me.parent.edit.setValue("")
+			return true
+
+		onRemoveItem
+			me.parent.listView.removeItem(me.parent.listView.getSelectedItemIndex())
+			return true
+
+		getSelectedItem 
+			result.result = me.listView.getSelectedItem()
+			result.success = true
+
+		getValue			
+			result.result = Array
+			for i = 0; i < me.listView.getItemCount(); i++
+				result.result[] = me.listView.getItem(i)
+			result.success = true

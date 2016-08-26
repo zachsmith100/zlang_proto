@@ -1,0 +1,42 @@
+==1==
+OnCreated
+my name
+123
+{}
+==2==
+OnCreated
+your name
+123
+{}
+==3==
+OnCreated
+my name
+321
+{}
+==4==
+OnCreated
+your name
+321
+3.300000
+==5==
+OnCreated
+my name
+9
+{}
+==6==
+Hello
+==7==
+OnCreated
+my name
+123
+[1,2]
+==8==
+OnCreated
+my name
+123
+[]
+==9==
+OnCreated
+my name
+123
+{}

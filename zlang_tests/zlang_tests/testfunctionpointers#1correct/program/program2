@@ -1,0 +1,44 @@
+customPropHandler param1
+	println(me.prop)
+
+customOnClick
+	println("world")
+
+customParamHandler param1 param2
+	println(param1 + param2 + 3)
+
+SomeClass
+	public
+		name = "my name"
+		prop = 123
+
+		onClick
+			println("Hello")			
+
+		paramHandler param1 param2
+			println(param1 + param2)
+
+		propHandler param1
+			println(param1)
+
+EntryPoint
+	public
+		run
+			b = SomeClass
+			b.onClick()
+			b.onClick = customOnClick
+			b.onClick()
+			unset(b.onClick)
+			b.onClick()
+			b.paramHandler(1 2)
+			b.paramHandler = customParamHandler
+			b.paramHandler(1 2)
+			unset(b.paramHandler)
+			b.paramHandler(1 2)
+			b.propHandler(3)
+			b.propHandler = customPropHandler
+			b.propHandler(3)
+			unset(b.propHandler)
+			b.propHandler(3)
+			return true
+

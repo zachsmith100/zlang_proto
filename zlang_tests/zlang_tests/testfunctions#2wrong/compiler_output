@@ -1,0 +1,8 @@
+Start compiler 
+Fatal error in <some file> at line 4! Attempt to call function globalFunc2 with invalid count of parameters (expected count of parameters: 2) 
+Fatal error in <some file> at line 11! Attempt to call unknown inner method of class (globalFunc1). 
+Fatal error in <some file> at line 11! Attempt to use const value 10 as out parameter for method! 
+Fatal error in <some file> at line 13! Attempt to call non-standard function run 
+Code generation was FAILED with fatal errors: 4
+
+End compiler 

@@ -1,0 +1,20 @@
+
+EntryPoint
+	public
+		run
+			read(a)
+			if (a == 1)
+				print("yes")
+				println(" man")
+			else
+			read(b)
+			if (a == 1) and b > 2
+				println("success")
+			else
+				println("fail")
+			else
+				print("my dream is near")
+			read(c)
+			if (a + c + b > 10) or ((a > 0) and (b > 0))
+			return true
+

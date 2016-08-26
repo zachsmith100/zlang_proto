@@ -1,0 +1,9 @@
+Function EntryPoint::testCase1 interrupted after line 7: Multiplication error. Failed to convert to type integer
+Function EntryPoint::testCase2 interrupted after line 15: Division error. Failed to convert to type integer
+Function EntryPoint::testCase3 interrupted after line 23: Logical XOR error. Failed to convert to type integer
+Function EntryPoint::testCase4 interrupted after line 30: Logical OR error. Failed to convert to type integer
+Function EntryPoint::testCase5 interrupted after line 37: Logical OR error. Failed to convert to type integer
+Function EntryPoint::testCase6 interrupted after line 44: Logical OR error. Failed to convert to type integer
+Function EntryPoint::testCase7 interrupted after line 51: Substraction error. Failed to convert to type integer
+Function EntryPoint::testCase8 interrupted after line 60: Substraction error. Failed to convert to type integer
+Function EntryPoint::testCase9 interrupted after line 66: Substraction error. Failed to convert to type integer

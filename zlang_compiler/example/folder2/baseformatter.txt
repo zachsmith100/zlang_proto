@@ -1,0 +1,14 @@
+BaseDateFormatter
+	private
+		day = 1
+		month = 1
+		year = 1970
+	public
+		setDay d
+			me.day = d
+		setMonth m
+			me.month = m
+		setYear y
+			me.year = y
+		printDate
+			print("")

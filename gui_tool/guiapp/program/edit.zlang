@@ -1,0 +1,41 @@
+include "qlineedit.h"
+
+CEdit
+	public
+		cpp@
+			QLineEdit* edit;
+		@cpp
+
+		wnd = Object
+
+		onCreated
+			handle = me.wnd.getHandle()
+			name = CNamesGenerator.getName()
+			cpp@
+				CWindowProto* wndPtr = (CWindowProto*)handle.ToPtr();
+				MY->edit = new QLineEdit(wndPtr);
+				MY->edit->setObjectName(name.ToString().c_str());
+				MY->edit->setText(ME["defaultValue"].ToString().c_str());
+				MY->edit->setGeometry(QRect(ME["x"].ToInt(), ME["y"].ToInt(), ME["width"].ToInt(), ME["height"].ToInt()));
+			@cpp
+			return true
+
+		getValue
+			value = ""
+			cpp@
+				if (MY->edit)
+				{
+					value = MY->edit->text().toStdString();
+				}
+			@cpp
+			result.result = value
+			result.success = true
+
+		setValue value
+			cpp@
+				if (MY->edit)
+				{
+					MY->edit->setText(value.ToString().c_str());
+				}
+			@cpp
+			return true

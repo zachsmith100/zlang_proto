@@ -1,0 +1,101 @@
+
+CListView
+	public
+		cpp@
+			QListView* listView;
+		@cpp
+
+		onCreated
+			handle = me.wnd.getHandle()
+			name = CNamesGenerator.getName()
+			cpp@
+				CWindowProto* wndPtr = (CWindowProto*)handle.ToPtr();
+				MY->listView = new QListView(wndPtr);
+				QStringListModel* model = new QStringListModel(wndPtr);
+				MY->listView->setModel(model);
+				MY->listView->setGeometry(ME["x"].ToInt(), ME["y"].ToInt(), ME["width"].ToInt(), ME["height"].ToInt());
+				MY->listView->setObjectName(name.ToString().c_str());
+				MY->listView->show();
+			@cpp
+			return true
+
+		addItem title
+			cpp@
+				if (MY->listView != NULL)
+				{
+					QStringListModel* model = ((QStringListModel*)MY->listView->model());
+					QStringList list = model->stringList();
+					list.append(title.ToString().c_str());
+					model->setStringList(list);
+				}
+			@cpp
+			return true
+
+		removeItem index
+			cpp@
+				if (MY->listView != NULL)
+				{
+					QStringListModel* model = ((QStringListModel*)MY->listView->model());
+					QStringList list = model->stringList();
+					list.removeAt(index.ToInt());
+					model->setStringList(list);
+				}
+			@cpp
+			return true
+
+		getSelectedItem 
+			item = ""
+			cpp@
+				if (MY->listView != NULL)
+				{
+					QModelIndexList l = MY->listView->selectionModel()->selectedIndexes();
+					if (l.size() > 0)
+					{
+						QStringListModel* model = ((QStringListModel*)MY->listView->model());
+						item = model->stringList().at(l[0].row()).toStdString();
+					}
+				}
+			@cpp
+			result.result = item
+			result.success = true
+
+		getSelectedItemIndex
+			item = 0
+			cpp@
+				if (MY->listView != NULL)
+				{
+					QModelIndexList l = MY->listView->selectionModel()->selectedIndexes();
+					if (l.size() > 0)
+					{
+						QStringListModel* model = ((QStringListModel*)MY->listView->model());
+						item = l[0].row();
+					}
+				}
+			@cpp
+			result.result = item
+			result.success = true
+
+		getItemCount
+			count = 0
+			cpp@
+				if (MY->listView != NULL)
+				{
+					QStringListModel* model = ((QStringListModel*)MY->listView->model());
+					QStringList list = model->stringList();
+					count = list.size();
+				}
+			@cpp
+			result.result = count
+			result.success = true
+
+		getItem index
+			item = ""
+			cpp@
+                                if (MY->listView != NULL)
+				{
+					QStringListModel* model = ((QStringListModel*)MY->listView->model());
+					item = model->stringList().at(index.ToInt()).toStdString();
+				}
+			@cpp
+			result.result = item
+			result.success = true

@@ -1,0 +1,8 @@
+Cannot open stream _input1 after line 4 in EntryPoint::run
+Attempt to read from file _input1 after line 11 in EntryPoint::run. File is not opened
+JSON parse error '* Line 1, Column 2
+  Syntax error: value, object or array expected.
+' for json string '[(]' after line 31 in EntryPoint::run
+XML parse error (XML_ERROR_PARSING_TEXT) for file input3 after line 68 in EntryPoint::run
+Element of hashtable is skipped in XML conversion process because of unsupported type of key (class) after line 87 in EntryPoint::run
+Array was skipped during XML construction... after line 87 in EntryPoint::run

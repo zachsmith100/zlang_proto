@@ -1,0 +1,37 @@
+Write a function which returns the sort index of a given string. The
+sort index should represent the zero-based position of the string in
+an alphabetically ascending sorted array of all possible strings
+composed of the same letters and the same length of the input string.
+Assume input ASCII letters a-z and a max input length of 20.
+
+Example:
+
+run => 15
+
+0  nnn
+1  nnr
+2  nnu
+3  nrn
+4  nrr
+5  nru
+6  nun
+7  nur
+8  nuu
+9  rnn
+10 rnr
+11 rnu
+12 rrn
+13 rrr
+14 rru
+15 run
+16 rur
+17 ruu
+18 unn
+19 unr
+20 unu
+21 urn
+22 urr
+23 uru
+24 uun
+25 uur
+26 uuu

@@ -1,0 +1,1 @@
+[[operand]][[mathOperator]][[end]]

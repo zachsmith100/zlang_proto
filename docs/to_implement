@@ -1,0 +1,66 @@
+Arrays - numerical indexes must have sequential order, starting from zero.
+
+a = new Array
+a.resize(2) - method to set size of array
+a[0] = 1
+a[1] = "123"
+a[] = "hello" // size of array will be 3
+a[4] = "world" // must be ignored; warning will be written to log
+a.erase(index) - method to remove one element, numerical indexes must save sequential order after removing element
+a.insert(index, value) - method to insert one element, numerical indexes must save sequential order after removing element
+a.length - read-only property with count of elements      
+
+String extended support
+s.trim
+s.ltrim
+s.rtrim
+s.length
+s.replace
+s.insert
+s.erase
+s.find
+s.find_first_of
+s.find_last_of
+s.substr
+regular expressions
+
+Hashtables
+a = new Hashtable
+a["key"] = "value" // any UniVar can be key or value
+a.removeKey("key") - method to remove something from hashtable
+a.keyExists("key") - method to check if key exists
+a.length - read-only property with count of elements      
+foreach (pair in a)	// foreach for traversal of hashtable
+{
+	print pair.key
+	print pair.value
+}
+
+
+Empty object
+a = new Object
+a.prop1 = 1
+a.prop2 = 2
+
+Comments
+C++ like
+/* 
+ multiline
+ comment
+ */
+
+// single line comment
+
+Asserts
+
+assert(condition)
+assert(condition, warningText)
+
+Files: text, binary, ini, xml
+
+C++ interop
+
+way to define a type bottom-up instead of top-down?
+
+forms and controls? QT, wxwidgets?
+opengl

@@ -1,0 +1,78 @@
+SomeBaseClass
+	public
+		abc = 3
+
+singleton SomeSingletonClass
+	public
+		a = 1
+
+SomeClass
+	public
+		name = "my name"
+		prop = 123
+
+		onClick
+			println("Hello")			
+
+		paramHandler param1 param2
+			println(param1 + param2)
+
+		propHandler param1
+			println(param1)
+
+EntryPoint : SomeBaseClass
+	public
+		prop = 444
+
+		customPropHandler param1
+			println(me.prop)
+
+		customOnClick
+			println("world")
+
+		customParamHandler param1 param2
+			println(param1 + param2 + 3)
+		run
+			b = SomeClass
+			b.onClick()
+			d = me.customOnClick
+			b.onClick = d
+			b.arbitraryMethod = d
+			b.onClick()
+			unset(b.onClick)
+			b.onClick()
+			b.arbitraryMethod()
+			me.someMethod = d
+			me.someMethod()
+			SomeSingletonClass.someSingletonMethod = d
+			SomeSingletonClass.someSingletonMethod()
+			base.someBaseMethod = d
+			base.someBaseMethod()
+			b.paramHandler(1 2)
+			b.paramHandler = me.customParamHandler
+			d = me.customParamHandler
+			b.paramHandler(1 2)
+			unset(b.paramHandler)
+			b.paramHandler(1 2)
+			SomeSingletonClass.someSingletonMethod2 = d
+			SomeSingletonClass.someSingletonMethod2(1 2)
+			b.arbMethod = d
+			b.arbMethod(1 2)
+			b.propHandler(3)
+			b.propHandler = me.customPropHandler
+			me.someMethod = me.customPropHandler
+			me.someMethod(3)
+			d = me.customPropHandler
+			e = d
+			base.someBaseMethod = e
+			base.someBaseMethod(3)
+			b.propHandler(3)
+			unset(b.propHandler)
+			b.propHandler(3)
+
+			abc = Object
+			abc.method = me.customOnClick
+			abc.method()
+
+			return true
+

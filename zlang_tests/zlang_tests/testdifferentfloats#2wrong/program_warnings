@@ -1,0 +1,18 @@
+Function EntryPoint::log interrupted after line 4: Attempt to call Number.Log using incorrect parameter
+Function EntryPoint::log interrupted after line 4: Attempt to call Number.Log using incorrect parameter
+Function EntryPoint::log interrupted after line 4: Attempt to call Number.Log using incorrect parameter
+Function EntryPoint::log10 interrupted after line 7: Attempt to call Number.Log10 using incorrect parameter
+Function EntryPoint::log10 interrupted after line 7: Attempt to call Number.Log10 using incorrect parameter
+Function EntryPoint::log10 interrupted after line 7: Attempt to call Number.Log10 using incorrect parameter
+Function EntryPoint::sqrt interrupted after line 13: Attempt to call Number.Sqrt using incorrect parameter
+Function EntryPoint::sqrt interrupted after line 13: Attempt to call Number.Sqrt using incorrect parameter
+Function EntryPoint::sqrt interrupted after line 13: Attempt to call Number.Sqrt using incorrect parameter
+Function EntryPoint::asin interrupted after line 16: Attempt to call Number.Asin using incorrect parameter
+Function EntryPoint::asin interrupted after line 16: Attempt to call Number.Asin using incorrect parameter
+Function EntryPoint::asin interrupted after line 16: Attempt to call Number.Asin using incorrect parameter
+Function EntryPoint::acos interrupted after line 19: Attempt to call Number.Acos using incorrect parameter
+Function EntryPoint::acos interrupted after line 19: Attempt to call Number.Acos using incorrect parameter
+Function EntryPoint::acos interrupted after line 19: Attempt to call Number.Acos using incorrect parameter
+Function EntryPoint::pow interrupted after line 10: Invalid parameters for Number.Pow
+Function EntryPoint::pow interrupted after line 10: Invalid parameters for Number.Pow
+Function EntryPoint::pow interrupted after line 10: Invalid parameters for Number.Pow

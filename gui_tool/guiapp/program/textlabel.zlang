@@ -1,0 +1,20 @@
+
+include "qlabel.h"
+
+CTextLabel
+	public
+		cpp@
+			QLabel* label;
+		@cpp
+
+		onCreated
+			handle = me.wnd.getHandle()
+			name = CNamesGenerator.getName()
+			cpp@
+				CWindowProto* wndPtr = (CWindowProto*)handle.ToPtr();
+				MY->label = new QLabel(wndPtr);
+				MY->label->setObjectName(ME["name"].ToString().c_str());
+				MY->label->setText(ME["title"].ToString().c_str());
+				MY->label->setGeometry(QRect(ME["x"].ToInt(), ME["y"].ToInt(), ME["width"].ToInt(), ME["height"].ToInt()));
+			@cpp
+			return true

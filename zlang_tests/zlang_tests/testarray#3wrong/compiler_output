@@ -1,0 +1,6 @@
+Start compiler 
+Fatal error in <some file> at line 7! Wrong attempt to add to array arr! 
+Fatal error in <some file> at line 10! Wrong attempt to add to array arr! 
+Code generation was FAILED with fatal errors: 2
+
+End compiler 

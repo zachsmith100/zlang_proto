@@ -1,0 +1,41 @@
+
+include "qdatetimeedit.h"
+
+CCalendar
+	public
+		cpp@
+			QDateEdit* calendar;
+		@cpp
+
+		onCreated
+			handle = me.wnd.getHandle()
+			name = CNamesGenerator.getName()
+			cpp@
+				CWindowProto* wndPtr = (CWindowProto*)handle.ToPtr();
+				MY->calendar = new QDateEdit(wndPtr);
+				MY->calendar->setObjectName(name.ToString().c_str());
+				MY->calendar->setGeometry(QRect(ME["x"].ToInt(), ME["y"].ToInt(), ME["width"].ToInt(), ME["height"].ToInt()));
+			@cpp
+			return true
+
+		getValue 
+			year = 0
+			month = 0
+			day = 0
+			cpp@
+				if (MY->calendar)
+				{
+					QDate dt = MY->calendar->date();
+					year = (int)dt.year();
+					month = (int)dt.month();
+					day = (int)dt.day();
+				}
+			@cpp
+			value = ""
+			value .= day
+			value .= "-"
+			value .= month
+			value .= "-"
+			value .= year
+			result.result = value
+			result.success = true

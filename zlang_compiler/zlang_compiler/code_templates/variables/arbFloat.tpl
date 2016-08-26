@@ -1,0 +1,1 @@
+CArbitraryPrecisionFloat("[[value]]", [[defaultPrecision]])

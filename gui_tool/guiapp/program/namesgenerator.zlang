@@ -1,0 +1,8 @@
+singleton CNamesGenerator
+	private
+		currentId = 0
+	public
+		getName
+			me.currentId++
+			result.result = "generated_name_"
+			result.result .= me.currentId

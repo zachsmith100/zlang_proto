@@ -1,0 +1,1 @@
+[[operand1]] [[sign]] [[operand2]]

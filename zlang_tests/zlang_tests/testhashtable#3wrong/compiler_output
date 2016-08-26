@@ -1,0 +1,6 @@
+Start compiler 
+Fatal error in <some file> at line 13! Attempt to use simultaneously cycle variable pair for second cycle! 
+Fatal error in <some file> at line 18! Attempt to use same variable as hashtable and foreach cycle variable (map)! 
+Code generation was FAILED with fatal errors: 2
+
+End compiler 

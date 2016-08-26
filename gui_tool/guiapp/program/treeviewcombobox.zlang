@@ -1,0 +1,47 @@
+
+include "treebox.h"
+
+CTreeViewComboBox
+	public
+		cpp@
+			TreeBox* treeBox;
+			QStandardItemModel* model;
+			QStandardItem* currentNode;
+		@cpp
+
+		onCreated
+			handle = me.wnd.getHandle()
+			name = CNamesGenerator.getName()
+			cpp@
+				CWindowProto* wndPtr = (CWindowProto*)handle.ToPtr();
+				MY->model = new QStandardItemModel();
+				MY->treeBox = new TreeBox(wndPtr);
+				MY->treeBox->setGeometry(ME["x"].ToInt(), ME["y"].ToInt(), ME["width"].ToInt(), ME["height"].ToInt());
+				MY->treeBox->setModel(MY->model);
+				MY->treeBox->setObjectName(name.ToString().c_str());
+				MY->treeBox->show();
+				MY->currentNode = NULL;
+			@cpp
+			return true
+
+		addNode title
+			cpp@
+				MY->currentNode = new QStandardItem(title.ToString().c_str());
+        	                MY->model->appendRow(MY->currentNode);
+			@cpp
+			return true
+
+		addItem title
+			cpp@
+				QStandardItem* item = new QStandardItem(title.ToString().c_str());
+        	                MY->currentNode->appendRow(item);
+			@cpp
+			return true
+
+		getSelectedItem 
+			item = ""
+			cpp@
+				item = MY->treeBox->currentText().toStdString();
+			@cpp
+			result.result = item
+			result.success = true

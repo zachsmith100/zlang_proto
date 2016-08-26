@@ -1,0 +1,4 @@
+There are n students in a class. Every student can have 0 or more friends. If A is a friend of B and B is a friend of C then A and C are also friends. 
+So we define a friend circle as a group of students who are friends as given by above definition. Given an nXn-matrix friends which consists of 
+characters Y or N. If friends[i][j]=Y, then ith and jth students are friends, friends[i][j]=N, then i and j are not friends. Find 
+the total number of such friend circles in the class

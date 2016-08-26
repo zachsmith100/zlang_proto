@@ -1,0 +1,26 @@
+opened = false
+writeable = false
+start read non-exist text file
+end read non-exist text file
+opened = true
+writeable = true
+start read json file
+true
+[1,6,18]
+try again
+true
+[1,6,18]
+end read json file
+opened = true
+writeable = true
+try to read wrong json
+[1,6,18]
+opened = true
+writeable = true
+opened = true
+writeable = true
+{"life":10,"subobject1":{"prop":"sometext","val":3.5,"value":3},"subobject2":{"prop":"text","subsubobject0":{"open":1},"subsubobject1":{"open":3},"val":true,"value":20}}
+{}
+{}
+{"oldsection":{"oldkey":"1"},"section1":{"name1":"val1","name2":"val2"}}
+[1,2,3]

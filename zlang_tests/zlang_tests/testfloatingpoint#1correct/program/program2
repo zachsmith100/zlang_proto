@@ -1,0 +1,49 @@
+
+EntryPoint
+	public
+		run
+			a = ~2.21212121213434343434565656565656
+			b = ~1.0101010101040404040406060606060678
+			c = a + b
+			println(c)
+			d = a * b
+			println(d)
+			e = a / b
+			println(e)
+			f = a - b
+			println(f)
+			c -= a
+			println(c)
+			d += a
+			println(d)
+			e *= b
+			println(e)
+			f /= b
+			println(f)
+			c = Float<128>(1.25)
+			println(c)
+			d = Float<192>
+			println(d)
+			e = Float<64> + 3.35
+			println(e)
+			e = Float<64>(1.432423566) + 6.4324
+			println(e)
+			f = Float<128>(e) + 6.4324
+			println(f)
+			f = Float<128>(e + f * c) + 6.4324
+			println(f)
+			s = "1.1324234324"
+			f = Float<128>(s) + 6.4324
+			println(f)
+			println(Number.PI)
+			println(Number.PI(16))
+			println(Number.PI(32))
+			println(Number.PI(64))
+			println(Number.PI(100))
+			println(Number.GetPrecision(f))
+			println(Number.GetPrecision(e))
+			m = Float<64>
+			println(Number.GetPrecision(m))
+
+			return true
+

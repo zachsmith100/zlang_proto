@@ -1,0 +1,1 @@
+[[className]]Proto* [[classInstanceName]] = new [[className]]Proto(); [[initCode]] [[fullObjectName]] = CUniVar([[classInstanceName]]); [[objectName]]->CallMethod__(3, __FUNC_ENUM__onCreated, false, 0)[[end]]

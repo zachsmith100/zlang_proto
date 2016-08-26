@@ -1,0 +1,27 @@
+
+EntryPoint
+	public
+		run
+			regex = "(\\w{1,})([[:digit:]])"
+			str = "new1 rio3 yoshkar8 baden4"
+			matches = String.RegexMatch(regex str)
+			println(matches)
+
+			obj2 = 5
+			matches = String.RegexMatch(obj2 str)
+			println(matches)
+
+			obj3 = true
+			matches = String.RegexMatch(obj3 str)
+			println(matches)
+
+			obj4 = "5.0"
+			obj4 = String.RegexReplace(obj4 str "a")
+			println(obj4)
+
+			obj5 = 'c'
+			status = String.RegexSearch(obj5 str)
+			println(status)
+
+			return true
+

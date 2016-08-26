@@ -1,0 +1,5 @@
+Start compiler 
+Fatal error in <some file> at line 42! Attempt to call unknown inner method of class (getName). 
+Code generation was FAILED with fatal errors: 1
+
+End compiler 

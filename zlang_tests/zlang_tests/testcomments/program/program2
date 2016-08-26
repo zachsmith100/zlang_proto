@@ -1,0 +1,25 @@
+
+// comment for class
+EmptyClass
+	// comment for section
+	public
+		/* multiline comment 
+		for property
+	*/
+		name = "Bill"
+
+/* 
+multiline comment 
+for class
+*/
+
+EntryPoint
+	public
+// comment for func
+		run
+			print("/*comment*/") // comment2
+			/*print("multiline comment")*/
+			/* real
+	multiline
+			comment*/
+			print("\n") // comment1

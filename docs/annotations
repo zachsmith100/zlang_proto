@@ -1,0 +1,15 @@
+validateEmail emailAddress
+  // validate...
+  return true
+
+validateNoNumbers input
+  // validate...
+  return true
+
+@param1
+  validators: validateEmail validateNoNumbers
+  editor: emailAddress
+@param2
+  editor: color
+myFunction param1 param2 param3
+  return true

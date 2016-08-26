@@ -1,0 +1,49 @@
+
+EntryPoint
+	public
+		run
+			str = "hello world"
+			str = String.RegexReplace(str "(h)" "$$1")
+			println(str)
+			
+			println(String.RegexSearch(str "([[:error:]])"))
+
+			str = "abc AbC ABC"
+			// I commented this because Apple clang generate code for this invalid regex which hangs
+			// matches = str.regexMatch(")(abc)")
+			// println(matches)
+
+			options = Object
+			options.extended = true
+			options.awk = true
+			matches1 = String.RegexMatch(str "(abc)" options)
+			println(matches1)
+
+			options.icase = 123
+			matches2 = String.RegexMatch(str "(abc)" options)
+			println(matches2)			
+
+			obj = Array
+			obj[] = 1
+			obj[] = 5
+			obj[] = 7
+
+			matches3 = String.RegexMatch(obj "([0-9])")
+			print("matches: ")
+			println(matches3)
+
+			objH = Hashtable
+			objH["1"] = 1
+			objH[2] = 5
+			objH[true] = 7
+
+			matches4 = String.RegexMatch(objH "([0-9])")
+			print("matches: ")
+			println(matches4)
+
+			objO = Object
+			matches5 = String.RegexMatch(objO str)
+			println(matches5)
+
+			return true
+

@@ -1,0 +1,1 @@
+CUniVar [[instanceName]](new [[className]]())[[end]]

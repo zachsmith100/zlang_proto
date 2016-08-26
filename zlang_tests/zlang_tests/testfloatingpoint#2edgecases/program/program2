@@ -1,0 +1,27 @@
+
+EntryPoint
+	public
+		run
+			a = 1
+			b = 2.2
+			c = Float<128>(1.25)
+			d = "3.457"
+			d1 = a + b
+			d2 = b + a
+			e1 = a + c
+			e2 = c + a
+			f1 = b + c
+			f2 = c + b
+			g1 = d + c
+			g2 = c + d
+			println("int + double = " + d1 + "[" + typeof(d1) + "]")
+			println("double + int = " + d2 + "[" + typeof(d2) + "]")
+			println("int + arb_double = " + e1 + "[" + typeof(e1) + "]")
+			println("arb_double + int = " + e2 + "[" + typeof(e2) + "]")
+			println("double + arb_double = " + f1 + "[" + typeof(f1) + "]")
+			println("arb_double + double = " + f2 + "[" + typeof(f2) + "]")
+			println("string + arb_double = " + g1 + "[" + typeof(g1) + "]")
+			println("arb_double + string = " + g2 + "[" + typeof(g2) + "]")
+
+			return true
+

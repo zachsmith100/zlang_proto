@@ -1,0 +1,64 @@
+
+EntryPoint
+	public
+		run
+			fIn = openStream("input.bin" "binary")
+			readBytes = 200
+			read(fIn binaryArr readBytes)
+			println(readBytes)
+			println(binaryArr.length)
+			println(binaryArr)
+			boolVar = binaryArr.extractBoolean(-20 1)
+			println(boolVar)
+			intVar1 = binaryArr.extractNumeric(51 1)
+			println(intVar1)
+			intVar2 = binaryArr.extractNumeric(1 3)
+			println(intVar2)
+			intVar3 = binaryArr.extractNumeric(1 -4)
+			println(intVar3)                    
+			strVar = binaryArr.extractString(23 5)
+			println(strVar)
+			floatVar = binaryArr.extractFloat(0 0)
+			println(floatVar)
+			doubleVar = binaryArr.extractFloat(21 8)
+			println(doubleVar)
+
+			fOut = createStream("output.bin" "binary")
+			binaryArr = Array
+
+			binaryArr.binarizeBoolean(true -1)
+			print("boolean > true -1: ")
+			println(binaryArr)
+
+			binaryArr.binarizeBoolean(44 1)
+			print("boolean > 44 1: ")
+			println(binaryArr)
+
+			binaryArr.binarizeNumeric('a' 1)
+			print("numeric > 'a' 1: ")
+			println(binaryArr)
+
+			binaryArr.binarizeNumeric(256 3)
+			print("numeric > 256 3: ")
+			println(binaryArr)
+
+			binaryArr.binarizeNumeric(0x0FAABB22 0)
+			print("numeric > 0x0FAABB22 0:")
+			println(binaryArr)
+
+			binaryArr.binarizeString(3.5)
+			print("string > 3.5:")
+			println(binaryArr)
+
+			binaryArr.binarizeFloat(3 2)
+			print("float > 3 2:")
+			println(binaryArr)
+
+			binaryArr.binarizeFloat(7.345 0)
+			print("float > 7.345 0:")
+			println(binaryArr)
+
+			print(fOut binaryArr binaryArr.length)
+
+			return true
+

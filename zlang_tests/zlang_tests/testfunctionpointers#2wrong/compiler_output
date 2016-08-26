@@ -1,0 +1,8 @@
+Start compiler 
+Fatal error in <some file> at line 8! Attempt to use base class method or property inside global functions! 
+Fatal error in <some file> at line 30! Attempt to use variable with same name as method of class name (run) 
+Fatal error in <some file> at line 41! Attempt to replace global function customParamHandler by function pointer! 
+Fatal error in <some file> at line 43! Attempt to replace global function customParamHandler by function pointer! 
+Code generation was FAILED with fatal errors: 4
+
+End compiler 

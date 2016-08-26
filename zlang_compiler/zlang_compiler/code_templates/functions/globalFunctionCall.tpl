@@ -1,0 +1,1 @@
+::[[functionName]]Proxy(MY[[functionParameters]])[[resultFieldPlaceholder]][[end]]

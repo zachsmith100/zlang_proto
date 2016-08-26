@@ -1,0 +1,66 @@
+Someclass
+  private
+    a = "Hello, World!"
+    b = 100.1
+    c = 0x100
+    
+  public
+  
+    d = "some public var"
+    
+    test a b c rc
+      rc = a * b * c
+      return true
+      
+    test a b c rc
+      rc = me.a * b * me.c      
+      if t > 1000
+        return false
+      
+    test_something_else p1 p2 p3 rc
+      rc = me.a * me.b + me.c
+      
+singleton SomeOtherClass
+  do_something
+    print "Hello"
+  
+EntryPoint
+    run
+      a = SomeClass
+      a.test 1 2 3
+      
+      print a.d
+      
+      SomeOtherClass.do_something
+      
+      print a
+      
+      read b // blocks until next message read using currently configured reader, default reader from stdin
+      
+      b.d = "Updated"
+         
+      print b // b is now of universal type
+      
+      read a // read from stdin
+      
+      print a
+      
+
+      
+
+// output from line 36
+{"a":"Hello, World!", "b":100.1, "c":256, "d":"some public var"}
+
+
+// sent to stdin for line 38:
+{"a":"Some new value"}
+
+// sent to stdin for line 44
+{"a":"Overwrite a's value and nothing else"}
+
+
+// output from line 42
+{"a":"Some new value", "d":"Updated"}
+
+// output from line 46
+{"a":"Overwrite a's value and nothing else", "b":100.1, "c":256, "d":"some public var"}

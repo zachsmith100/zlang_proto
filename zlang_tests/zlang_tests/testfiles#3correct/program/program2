@@ -1,0 +1,55 @@
+
+EntryPoint
+	public
+		run
+			fIn = openStream("input.bin" "binary")
+			readBytes = 22
+			read(fIn binaryArr readBytes)
+			boolVar = binaryArr.extractBoolean(0 1)
+			println(boolVar)
+			intVar1 = binaryArr.extractNumeric(1 1)
+			println(intVar1)
+			intVar2 = binaryArr.extractNumeric(1 2)
+			println(intVar2)
+			intVar3 = binaryArr.extractNumeric(1 4)
+			println(intVar3)
+			strVar = binaryArr.extractString(5 5)
+			println(strVar)
+			floatVar = binaryArr.extractFloat(10 4)
+			println(floatVar)
+			doubleVar = binaryArr.extractFloat(14 8)
+			println(doubleVar)
+
+			fOut = createStream("output.bin" "binary")
+			binaryArr = Array
+			binaryArr.binarizeBoolean(true 1)
+			binaryArr.binarizeNumeric(27 1)
+			binaryArr.binarizeNumeric(256 2)
+			binaryArr.binarizeNumeric(0x0FAABB22 4)
+			binaryArr.binarizeString("Hello world!")
+			binaryArr.binarizeFloat(3.5 4)
+			binaryArr.binarizeFloat(7.345 8)
+			println(binaryArr)
+			print(fOut binaryArr binaryArr.length)
+
+			unset(fOut)
+
+			fIn = openStream("output.bin" "binary")
+			read(fIn binaryArr fIn.size)
+			boolVar = binaryArr.extractBoolean(0 1)
+			println(boolVar)
+			intVar1 = binaryArr.extractNumeric(1 1)
+			println(intVar1)
+			intVar2 = binaryArr.extractNumeric(2 2)
+			println(intVar2)
+			intVar3 = binaryArr.extractNumeric(4 4)
+			println(intVar3)
+			strVar = binaryArr.extractString(8 12)
+			println(strVar)
+			floatVar = binaryArr.extractFloat(20 4)
+			println(floatVar)
+			doubleVar = binaryArr.extractFloat(24 8)
+			println(doubleVar)
+
+			return true
+

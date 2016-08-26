@@ -1,0 +1,113 @@
+
+EntryPoint
+	public
+		run
+			f = openStream("_input1" "text")
+			print("opened = ")
+			println(f.opened)
+			print("writeable = ")
+			println(f.writeable)
+			println("start read non-exist text file")
+			while read(f str)
+				println(str)
+			println("end read non-exist text file")
+
+			f = openStream("input2" "json")
+			print("opened = ")
+			println(f.opened)
+			print("writeable = ")
+			println(f.writeable)
+			println("start read json file")
+			println(read(f strJSON))
+			println(strJSON)			
+			println("try again")
+			str = ""
+			println(read(f str))
+			println(str)			
+			println("end read json file")
+
+			// json from empty file
+			f = openStream("input4" "json")
+			read(f str)
+
+			f = openStream("input3" "json")
+			print("opened = ")
+			println(f.opened)
+			print("writeable = ")
+			println(f.writeable)
+			println("try to read wrong json")
+			read(f str)
+			println(str)			
+
+			unset(f) // file f now must be closed
+
+			f2 = openStream("input3" "json")
+			print("opened = ")
+			println(f2.opened)
+			print("writeable = ")
+			println(f2.writeable)
+
+			unset(f2)
+
+			f3 = createStream("output1" "json")
+			print("opened = ")
+			println(f3.opened)
+			print("writeable = ")
+			println(f3.writeable)
+			print(f3 strJSON)
+			read(f3 str)
+
+			fInXML = openStream("input_xml" "xml")
+			read(fInXML a)
+			read(fInXML b)
+			read(fInXML c)
+			println(c)
+
+			a = Object
+			fInXML = openStream("input3" "xml")
+			read(fInXML a)
+			println(a)
+
+			fOutXML = createStream("empty_output_xml" "xml")
+			a = Object
+			println(fOutXML a)
+
+			fOutXML = createStream("output_xml" "xml")
+			println(fOutXML c)
+			println(fOutXML c)
+			println(fOutXML c)
+
+			fOutXML = createStream("partially_invalid_output_xml" "xml")
+			c.prop1 = Array
+			c.prop1[] = 1
+			c.prop1[] = 2
+			c.abc = Hashtable
+			c.abc[a] = 5
+			c.abc["b"] = "c"
+			println(fOutXML c)
+
+			fIni = openStream("empty_ini" "ini")
+			read(fIni emptyIniHash)
+			println(emptyIniHash)
+
+			fIni = openStream("input_ini" "ini")
+			read(fIni hashIni1)
+			read(fIni hashIni2)
+			read(fIni hashIni3)
+			println(hashIni3)
+
+			fIni = createStream("output_ini" "ini")
+			hashIni3["oldsection"]["key2"] = Array
+			hashIni3["oldsection"]["key2"][] = 1
+			hashIni3["oldsection"]["key2"][] = 2
+			hashIni3["oldsection"]["key2"][] = 3
+			println(hashIni3["oldsection"]["key2"])
+			
+			h = Hashtable
+			h["abc"] = "def"
+			h["m"] = 1
+			hashIni3["oldsection"]["oldkey"] = "h"
+			println(fIni hashIni3)
+
+			return true
+

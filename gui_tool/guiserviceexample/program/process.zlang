@@ -1,0 +1,125 @@
+include "sys/types.h"
+include "sys/stat.h"
+windows::include "direct.h"
+windows::include "shlobj.h"
+windows::include "winreg.h"
+unix::include "unistd.h"
+include "stdlib.h"
+include "stdio.h"
+
+singleton Process
+	private
+		readFileToString fileName (out)resultStr
+			file = openStream(fileName "text")
+			if file.opened == false
+				return false
+			while (read(file str) == true)
+				resultStr += str
+			clearStream(file)
+			unset(file)
+			return true
+
+		getTempFolder
+			path = ""
+			cpp@
+				#ifdef _WIN32
+					char tmp[MAX_PATH];
+					SHGetSpecialFolderPathA(NULL, tmp, CSIDL_COMMON_APPDATA, true);	
+					path = tmp;
+				#else
+					path = P_tmpdir;
+				#endif
+			@cpp
+			result.result = path
+			result.success = true
+
+		isNonEmpty value 
+			result.success = (value.length > 0)
+			result.result.errorText = "Value '[name]' must be non empty"
+
+		isArrayWithNonEmptyElements value 
+			for i = 0; i < value.length; i++
+			if value[i].length == 0
+				return false
+			return true
+
+		isStringArrayValid value 
+			result.success = false
+
+			if (value.convertable("array") == false)
+				result.result.errorText = "Value '[name]' must be array of string"
+			else
+				if (value.length == 0)
+					result.result.errorText = "Value '[name]' must be non empty"
+				else
+					if (me.isArrayWithNonEmptyElements(value).object.success == false)
+						result.result.errorText = "All strings of '[name]' must be non empty"
+					else
+						result.success = true
+
+	public
+		@path
+			description: "Command"
+			editor: edit
+			validators: isNonEmpty
+
+		@paramsArr
+			description: "Parameters"
+			editor: stringlist
+			validators: isStringArrayValid
+
+		@return
+			defaultField: resultObject
+
+		start path paramsArr
+			ok = true
+
+			fileName1 = me.getTempFolder()
+			fileName1 += "/results1"
+			fileName2 = me.getTempFolder()
+			fileName2 += "/results2"
+
+			params = paramsArr.implode(" ")
+			params += " >"
+			params += fileName1
+			params += " 2>"
+			params += fileName2
+
+			cpp@			
+				#ifdef _WIN32
+					std::string path_ = path.ToString();
+					std::string params_ = params.ToString();
+					path_ = "/c " + path_;
+					path_ = path_ + " ";
+					params_ = path_ + params_;				
+					SHELLEXECUTEINFOA ShExecInfo;
+					ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
+					ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
+					ShExecInfo.hwnd = NULL;
+					ShExecInfo.lpVerb = "open";
+					ShExecInfo.lpFile = "cmd.exe";
+					ShExecInfo.lpParameters = params_.c_str();
+					ShExecInfo.lpDirectory = NULL;
+					ShExecInfo.nShow = SW_MAXIMIZE;
+					ShExecInfo.hInstApp = NULL;
+					bool res = (ShellExecuteExA(&ShExecInfo) == TRUE);
+					WaitForSingleObject(ShExecInfo.hProcess, INFINITE);
+					ok = res;
+				#else
+					std::string shellCmd = path.ToString();
+					shellCmd += " ";
+					shellCmd += params.ToString();
+					system(shellCmd.c_str());
+					ok = true;
+				#endif
+			@cpp
+
+			if ok == false
+				return false
+
+			resultObject = ""
+
+			me.readFileToString(fileName1 resultObject)
+			me.readFileToString(fileName2 resultObject)
+
+			return true, resultObject

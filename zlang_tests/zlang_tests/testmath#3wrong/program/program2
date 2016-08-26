@@ -1,0 +1,81 @@
+
+EntryPoint
+	public
+		testCase1
+			a = Object
+			b = 3
+			b *= a
+			println("end 1")
+			return true
+
+		testCase2
+			a = Array
+			a[] = 3
+			b = 3
+			b /= a
+			println("end 2")
+			return true
+
+		testCase3
+			a = Hashtable
+			a["world"] = 3
+			b = 3
+			b ^= a
+			println("end 3")
+			return true
+
+		testCase4
+			a = "hello"
+			b = 3
+			b |= a
+			println("end 4")
+			return true
+
+		testCase5
+			a = EntryPoint
+			b = 3
+			b |= a
+			println("end 5")
+			return true
+
+		testCase6
+			a = EntryPoint
+			b = 3
+			b |= a
+			println("end 6")
+			return true
+
+		testCase7
+			a = openStream("input1" "text")
+			b = 3
+			b -= a
+			println("end 7")
+			return true
+
+		testCase8
+			c = openStream("input1" "json")
+			read(c a)
+			println(a)
+			b = 3
+			b -= a
+			println("end 8")
+			return true
+
+		testCase9 (out)a
+			b = 3
+			b -= a
+			println("end 9")
+			return true
+
+		run
+			println(me.testCase1().object.success)
+			println(me.testCase2().object.success)
+			println(me.testCase3().object.success)
+			println(me.testCase4().object.success)
+			println(me.testCase5().object.success)
+			println(me.testCase6().object.success)
+			println(me.testCase7().object.success)
+			println(me.testCase8().object.success)
+			println(me.testCase9(a).object.success)
+
+			return true

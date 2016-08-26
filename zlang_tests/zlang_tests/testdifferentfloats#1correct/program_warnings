@@ -1,0 +1,2 @@
+Function EntryPoint::log interrupted after line 4: Attempt to call Number.Log using incorrect parameter
+Function EntryPoint::log10 interrupted after line 7: Attempt to call Number.Log10 using incorrect parameter

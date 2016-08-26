@@ -1,0 +1,24 @@
+
+EntryPoint
+	public
+		run
+			map = Hashtable
+			map["somekey"] = "someelement"
+			map[123] = 321
+			map[true] = false
+			map[4.2] = 5.3
+
+			foreach pair in map
+				foreach pair in map
+					print(pair.key)
+					print("=")
+					println(pair.value)
+
+			foreach map in map
+				print(map.key)
+				print("=")
+				println(map.value)
+
+			return true
+
+			

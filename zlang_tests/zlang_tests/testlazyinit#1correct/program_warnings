@@ -1,0 +1,9 @@
+Attempt to use out of range block of binary file array to construct after line 58 in logInfo
+Attempt to use out of range block of binary file array to construct after line 60 in logInfo
+Attempt to use out of range block of binary file array to construct after line 62 in logInfo
+Attempt to use out of range block of binary file array to construct after line 64 in logInfo
+Cut range is incorrect after line 74 in logInfo, too big size
+Failed to erase array elements because of position to remove is out of range after line 76 in logInfo
+Attempt to explode empty string after line 130 in logInfo
+Attempt to get substring using wrong index or count from string  after line 132 in logInfo
+Attempt to erase using wrong index from string  after line 148 in logInfo

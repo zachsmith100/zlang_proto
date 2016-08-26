@@ -1,0 +1,260 @@
+==> 1 true {}
+false
+==> 1 1.100000 {}
+false
+==> 1 hello {}
+false
+==> 1 a {}
+false
+==> 1 {} {}
+false
+==> 1 [] {}
+false
+==> 1 {} {}
+false
+==> 1 {} {}
+false
+==> 1 {} {}
+false
+==> 1 {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} {}
+false
+==> true 1 {}
+false
+==> true 1.100000 {}
+false
+==> true hello {}
+false
+==> true a {}
+false
+==> true {} {}
+false
+==> true [] {}
+false
+==> true {} {}
+false
+==> true {} {}
+false
+==> true {} {}
+false
+==> true {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} {}
+false
+==> 1.100000 1 {}
+false
+==> 1.100000 true {}
+false
+==> 1.100000 hello {}
+false
+==> 1.100000 a {}
+false
+==> 1.100000 {} {}
+false
+==> 1.100000 [] {}
+false
+==> 1.100000 {} {}
+false
+==> 1.100000 {} {}
+false
+==> 1.100000 {} {}
+false
+==> 1.100000 {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} {}
+false
+==> hello 1 {}
+false
+==> hello true {}
+false
+==> hello 1.100000 {}
+false
+==> hello a {}
+false
+==> hello {} {}
+false
+==> hello [] {}
+false
+==> hello {} {}
+false
+==> hello {} {}
+false
+==> hello {} {}
+false
+==> hello {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} {}
+false
+==> a 1 {}
+false
+==> a true {}
+false
+==> a 1.100000 {}
+false
+==> a hello {}
+false
+==> a {} {}
+false
+==> a [] {}
+false
+==> a {} {}
+false
+==> a {} {}
+false
+==> a {} {}
+false
+==> a {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} {}
+false
+==> {} 1 {}
+{}
+false
+==> {} true {}
+{}
+false
+==> {} 1.100000 {}
+{}
+false
+==> {} hello {}
+{}
+false
+==> {} a {}
+{}
+false
+==> {} [] {}
+{}
+false
+==> {} {} {}
+{}
+true
+==> {} {} {}
+{}
+true
+==> {} {} {}
+{}
+true
+==> {} {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} {}
+{}
+false
+==> [] 1 {}
+false
+==> [] true {}
+false
+==> [] 1.100000 {}
+false
+==> [] hello {}
+false
+==> [] a {}
+false
+==> [] {} {}
+false
+==> [] {} {}
+false
+==> [] {} {}
+false
+==> [] {} {}
+false
+==> [] {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} {}
+false
+==> {} 1 {}
+{}
+false
+==> {} true {}
+{}
+false
+==> {} 1.100000 {}
+{}
+false
+==> {} hello {}
+{}
+false
+==> {} a {}
+{}
+false
+==> {} {} {}
+{}
+true
+==> {} [] {}
+{}
+false
+==> {} {} {}
+{}
+true
+==> {} {} {}
+{}
+true
+==> {} {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} {}
+{}
+false
+==> {} 1 {}
+{}
+false
+==> {} true {}
+{}
+false
+==> {} 1.100000 {}
+{}
+false
+==> {} hello {}
+{}
+false
+==> {} a {}
+{}
+false
+==> {} {} {}
+{}
+true
+==> {} [] {}
+{}
+false
+==> {} {} {}
+{}
+true
+==> {} {} {}
+{}
+true
+==> {} {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} {}
+{}
+false
+==> {} 1 {}
+{}
+false
+==> {} true {}
+{}
+false
+==> {} 1.100000 {}
+{}
+false
+==> {} hello {}
+{}
+false
+==> {} a {}
+{}
+false
+==> {} {} {}
+{}
+true
+==> {} [] {}
+{}
+false
+==> {} {} {}
+{}
+true
+==> {} {} {}
+{}
+true
+==> {} {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} {}
+{}
+false
+==> {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} 1 {}
+false
+==> {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} true {}
+false
+==> {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} 1.100000 {}
+false
+==> {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} hello {}
+false
+==> {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} a {}
+false
+==> {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} {} {}
+false
+==> {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} [] {}
+false
+==> {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} {} {}
+false
+==> {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} {} {}
+false
+==> {"opened":false,"path":"input_xml","position":0,"size":253,"type":"xml","writeable":false} {} {}
+false

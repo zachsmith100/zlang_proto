@@ -1,0 +1,80 @@
+
+EntryPoint
+	public
+		run
+			map = Hashtable
+			println (map.length)
+
+			map[1] = 3
+			map["hello"] = "world"
+			map[true] = false
+
+			println(map[1])
+			println(map["hello"])
+			println(map[true])
+
+			println(map)
+
+			b = map.keyExists("hello")
+			println(b)
+			b = map.keyExists("world")
+			println(b)
+			b = map.keyExists(1)
+			println(b)
+			b = map.keyExists(2)
+			println(b)
+
+			map.removeKey(1)
+
+			println(map)
+
+			values = map.getValues()
+			println(values)
+
+			keys = map.getKeys()
+			println(keys)
+
+			map["hello"] = "Andrey"
+			map["hello"] = "Andrey"
+			map["hello"] = "Andrey"
+			map["Andrey"] = 1
+			map[1] = 1
+			println(map["hello"])
+
+			foreach pair in map
+				foreach pair2 in map
+					if (pair2.key == pair.value)												
+						print(pair.key)
+						print("=")
+						println(pair.value)
+						print(pair2.key)
+						print("=")
+						println(pair2.value)
+						map.removeKey(pair2.key)					
+
+			map[1] = 2
+			map[3] = 4
+			map[5] = 6
+			map[7] = 8
+			i = 0
+
+			foreach pair in map
+				if pair.value == 4
+					map[10] = 11
+					map[11] = 12
+				print(pair.key)
+				print(":")
+				println(pair.value)				
+
+			map2 = map.clone()
+			map2["only_in_clone"] = 1
+			println(map2)
+			println(map)
+
+			map.clear()
+			println(map)
+			println(map.length)
+
+			return true
+
+			

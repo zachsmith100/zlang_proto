@@ -1,0 +1,41 @@
+Hello world
+success
+101
+56
+4294967195
+-56
+10.100000
+-5.600000
+true
+true
+a
+c
+hello
+world
+5
+-11
+1
+4294967294
+1.500000
+-3.300000
+true
+false
+o
+d
+5 2 2
+2.300000 7 h
+arr[1]
+str[1]
+hsh[4.1]
+count = 1
+title = hello
+len = 7
+koef = 4.300000
+count exists
+koef exists
+array json: [1.2,2.2999999999999998]
+hashtable json: {"4.100000":7,"new":"old"}
+object json: {"id":3,"title":"Object1"}
+[11,-18,48]
+{"90":2,"hello":"1"}
+{"new_property":2,"old_property":1}

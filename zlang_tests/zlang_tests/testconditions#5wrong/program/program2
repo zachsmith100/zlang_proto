@@ -1,0 +1,54 @@
+
+EntryPoint
+	public
+		testExpression v1 v2
+			if (v1 > v2)
+				println(" [+]")
+			else
+				println(" [-]")
+			return true
+
+		testOperand name v
+			print(name)
+			print(" vs 111")
+			if (me.testExpression(v 111).object.success == false)
+				println(" [failed]")
+
+			print(name)
+			print(" vs 12.3")
+			if (me.testExpression(v 12.3).object.success == false)
+				println(" [failed]")
+
+			print(name)
+			print(" vs false")
+			if (me.testExpression(v false).object.success == false)
+				println(" [failed]")
+
+			print(name)
+			print(" vs 'a'")
+			if (me.testExpression(v 'a').object.success == false)
+				println(" [failed]")
+
+			print(name)
+			print(" vs \"world\"")
+			if (me.testExpression(v "world").object.success == false)
+				println(" [failed]")
+
+			return true
+
+		run
+			obj = Object
+			arr = Array
+			hash = Hastable
+			func = me.testExpression
+			cl = EntryPoint
+			fXML = openStream("input_xml" "xml")
+
+			me.testOperand("object" obj)
+			me.testOperand("array" arr)
+			me.testOperand("hashtable" hash)
+			me.testOperand("function" func)
+			me.testOperand("class" cl)
+			me.testOperand("stream" fXML)
+
+			return true

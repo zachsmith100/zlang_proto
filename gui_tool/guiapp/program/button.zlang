@@ -1,0 +1,40 @@
+
+include "qpushbutton.h"
+
+CButton : cppinherit(public EmptyWindow)
+	public
+		cpp@
+			QPushButton* button;
+		@cpp
+
+	public
+		wnd = Object
+
+		onCreated
+			handle = me.wnd.getHandle()
+			name = CNamesGenerator.getName()
+			cpp@
+				CWindowProto* wndPtr = (CWindowProto*)handle.ToPtr();
+				MY->button = new QPushButton(wndPtr);
+				MY->button->setObjectName(name.ToString().c_str());
+				MY->button->setText(ME["title"].ToString().c_str());
+				MY->button->setGeometry(QRect(ME["x"].ToInt(), ME["y"].ToInt(), ME["width"].ToInt(), ME["height"].ToInt()));
+				QObject::connect(MY->button, &QPushButton::clicked, MY, &CButtonProto::OnClickHandler);
+			@cpp
+			return true
+
+		setVisible isVisible
+			cpp@
+				if (MY->button != NULL)
+				{
+					MY->button->setVisible(isVisible);
+				}
+			@cpp
+			return true
+
+		cpp@
+			void OnClickHandler()
+			{
+				this->Call("onClick");
+			}
+		@cpp

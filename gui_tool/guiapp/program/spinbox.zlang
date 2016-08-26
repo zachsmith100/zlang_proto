@@ -1,0 +1,35 @@
+
+include "qspinbox.h"
+
+CSpinBox : cppinherit(public EmptyWindow)
+	public
+		cpp@
+			QSpinBox* spinBox;
+		@cpp
+
+	public
+		wnd = Object
+
+		onCreated
+			handle = me.wnd.getHandle()
+			name = CNamesGenerator.getName()
+			cpp@
+				CWindowProto* wndPtr = (CWindowProto*)handle.ToPtr();
+				MY->spinBox = new QSpinBox(wndPtr);
+				MY->spinBox->setMinimum(ME["min"].ToInt());
+				MY->spinBox->setMaximum(ME["max"].ToInt());
+				MY->spinBox->setObjectName(name.ToString().c_str());
+				MY->spinBox->setGeometry(QRect(ME["x"].ToInt(), ME["y"].ToInt(), ME["width"].ToInt(), ME["height"].ToInt()));
+			@cpp
+			return true
+
+		getValue
+			value = 0
+			cpp@
+				if (MY->spinBox)
+				{
+					value = MY->spinBox->value();
+				}
+			@cpp
+			result.result = value
+			result.success = true

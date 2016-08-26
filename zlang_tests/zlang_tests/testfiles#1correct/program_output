@@ -1,0 +1,22 @@
+opened = true
+writeable = true
+start read text file
+text line 1
+text line 2
+text line 3
+end read text file
+opened = true
+writeable = true
+start read json file
+[1,6,18]
+end read json file
+10
+true
+10
+5
+15
+0
+[91,49,44,32,54,91,49,44,32,54,44,32,49,56,93]
+{"life":10,"subobject1":{"prop":"sometext","val":3.5,"value":3},"subobject2":{"prop":"text","subsubobject0":{"open":1},"subsubobject1":{"open":3},"val":true,"value":20}}
+{"first":2,"hello":"world","object":{"life":10,"subobject1":{"prop":"sometext","val":3.5,"value":3},"subobject2":{"prop":"text","subsubobject0":{"open":1},"subsubobject1":{"open":3},"val":true,"value":20}},"true":3.5}
+{"oldsection":{"oldkey":"1"},"section1":{"name1":"val1","name2":"val2"}}

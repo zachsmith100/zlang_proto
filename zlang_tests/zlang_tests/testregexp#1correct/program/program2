@@ -1,0 +1,39 @@
+
+EntryPoint
+	public
+		run
+			regex = "(\\w{1,})([[:digit:]])"
+			str = "new1 rio3 yoshkar8 baden4"
+			matches = String.RegexMatch(str regex)
+			println(matches)
+
+			str = String.RegexReplace(str regex "$2$1")
+			println(str)
+			
+			println(String.RegexSearch(str "([[:digit:]])"))
+
+			str = "abc AbC ABC"
+			matches = String.RegexMatch(str "(abc)")
+			println(matches)
+
+			options = Object
+			options.icase = false
+			matches = String.RegexMatch(str "(abc)" options)
+			println(matches)
+
+			options.icase = true
+			matches = String.RegexMatch(str "(abc)" options)
+			println(matches)
+
+			str = "123\n\"5\"234"
+			options.nosubs = true
+			options.extended = true
+			matches = String.RegexMatch(str "([0-9]+)" options)
+			println(matches)
+
+			options.nosubs = false
+			matches = String.RegexMatch(str "([0-9]+)" options)
+			println(matches)			
+
+			return true
+

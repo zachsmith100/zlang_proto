@@ -1,0 +1,24 @@
+
+SomeFakeClass
+	public
+		name = "1"
+		fakeFunction
+			print("It's fake!")
+			return true
+
+EntryPoint
+	public
+		run
+			a = Object
+			a.someprop1 = 123
+			a.someprop2 = "hello world"
+			a.fakeFunction()
+			println(a.someprop1)
+			println(a.name)
+			println(a.someprop2)
+			println(a)
+			b = a.clone()
+			println(b)
+
+			return true
+

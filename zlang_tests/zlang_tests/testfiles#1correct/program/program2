@@ -1,0 +1,85 @@
+
+EntryPoint
+	public
+		run
+			fOut = createStream("output1" "text")
+
+			fIn = openStream("input1" "text")
+			print("opened = ")
+			println(fIn.opened)
+			print("writeable = ")
+			println(fIn.writeable)
+			println("start read text file")
+			while read(fIn str)
+				println(str)
+				print(fOut str)
+				print(fOut "\n")
+			println("end read text file")			
+
+			fOut = createStream("output2" "text")
+
+			fIn = openStream("input2" "json")
+			print("opened = ")
+			println(fIn.opened)
+			print("writeable = ")
+			println(fIn.writeable)
+			println("start read json file")
+			read(fIn str)
+			print(fOut str)
+			println(str)			
+			println("end read json file")
+
+			// close file now
+			unset(fIn)
+
+			fIn = openStream("input2" "binary")
+			println(fIn.size)
+			println(read(fIn buf fIn.size))
+			println(fIn.position)			
+			seekStream(fIn 5)
+			println(fIn.position)			
+
+			fOut = createStream("output3" "binary")
+			print(fOut buf fIn.size)
+			seekStream(fOut 5)
+			print(fOut buf fIn.size)
+			println(fOut.position)
+			seekStream(fOut 0)
+			sz = 1.5 * fIn.size
+			read(fOut buf sz)
+			unset(fOut)
+			fOut = createStream("output3" "binary")			
+			println(fOut.size)
+			println(buf)
+
+			fInXML = openStream("input_xml" "xml")
+			read(fInXML a)
+			println(a)
+
+			fOutXML = createStream("output_xml" "xml")			
+			print(fOutXML a)	
+
+			b = Hashtable
+			b["hello"] = "world"
+			b["first"] = 2
+			b[true] = 3.5
+			b["object"] = a
+			
+			fOutXML = createStream("output_xml_hashtable" "xml")			
+			print(fOutXML b)	
+
+			read(fOutXML c)			
+			println(c)
+
+			fIni = openStream("input_ini" "ini")
+			read(fIni hashIni)
+			println(hashIni)
+
+			fIni = createStream("output_ini" "ini")
+//			hashIni["newsection"]["key1"] = "value1"
+			hashIni["oldsection"]["key2"] = "2"
+			hashIni["oldsection"]["oldkey"] = "newvalue"
+			println(fIni hashIni)
+
+			return true
+

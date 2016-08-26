@@ -1,0 +1,14 @@
+Failed to erase array elements because of position to remove is out of range after line 4 in EntryPoint::funcWithInternalError1
+Failed to erase array elements because of position to remove is out of range after line 8 in EntryPoint::funcWithInternalError2
+Function EntryPoint::funcWithInternalError3 interrupted after line 12: Failed to convert to int
+Failed to insert array element because of position to insert is out of range after line 16 in EntryPoint::funcWithInternalError4
+Failed to insert array element because of position to insert is out of range after line 20 in EntryPoint::funcWithInternalError5
+Function EntryPoint::funcWithInternalError6 interrupted after line 24: Failed to convert to int
+Function EntryPoint::funcWithError1 interrupted after line 30: Attempt to use out of range index for array element access
+Function EntryPoint::funcWithError3 interrupted after line 40: Attempt to use out of range index for array element access
+Function EntryPoint::funcWithError4 interrupted after line 46: Failed to convert to int
+Function EntryPoint::funcWithError5 interrupted after line 51: Failed to convert to int
+Function EntryPoint::funcWithError6 interrupted after line 56: Failed to convert to int
+Function EntryPoint::funcWithError9 interrupted after line 70: Limit of json tree level is reached. Probably you have circle references in your object
+Function EntryPoint::funcWithError8 interrupted after line 67: Attempt to use out of range index for array element access
+Function EntryPoint::funcWithError9 interrupted after line 70: Limit of json tree level is reached. Probably you have circle references in your object

@@ -1,0 +1,207 @@
+USADateFormatter : BaseDateFormatter
+	public
+		printDate
+			str = me.year
+			str .= "-"
+			str .= me.month
+			str .= "-"
+			str .= me.day
+			str .= me.count
+			print(str)
+
+
+RussiaDateFormatter : BaseDateFormatter
+	public
+		printDate
+			str = me.day
+			str .= "-"
+			str .= me.month
+			str .= "-"
+			str .= me.year
+			print(str)
+
+// between classes comment
+
+NonUsefulClass
+	public
+		abc = 681726
+		somefunc a
+			a.count = 1 // some comment
+			a.setDay(15)
+			a.setMonth(6)
+			a.setYear(2015)
+			a.printDate()
+			/* some
+		multiline 
+				comment */
+			return true
+
+NonUsefulClass2
+	public
+		somefunc a b
+			a++
+			return true
+
+/* between classes 
+multiline comment */
+SomeclassBase : NonUsefulClass
+	public
+		f = 300
+
+		performSomethingViaObject
+			print("Hi!")
+
+		// this is comment for otherfunc
+		otherfunc a b
+			print("otherfunc")
+
+	private
+		somePrivateMethod
+			print("123")
+
+
+Someclass : SomeclassBase
+	private
+		a = 100.1
+		e = 0xFFa0
+
+		abc z
+			z++
+
+	public
+		setObject param
+			me.tobj = Object
+			me.tobj.prop = 1
+			me.obj = param
+			me.otherfunc(1 2)
+			base.somePrivateMethod()
+// this is comment which is started without tabs
+			return true
+
+		performSomethingViaObject
+			tmp = RussiaDateFormatter
+			me.obj.somefunc(tmp)
+			print(me.a)
+			return true
+
+	/*
+	this is multiline
+	comment for initObject function
+*/
+
+		initObject
+			tmp = NonUsefulClass
+			me.setObject(tmp)
+			return true
+
+	public
+		somefunc c b
+			c++
+			for i = 0; i < 10; i++
+				k = 0
+				while k < 2
+					k = k + 1
+					print(b[i])
+
+			print(me.f)
+	public
+		reverse_words input
+			checking = Someclaass
+			start = 0
+			end = 0
+			while start == 0 or input[end - 1] != 0
+				if input[end] == ' ' or input[end] == 0
+					for j = start, k = end - 1; j < k; j++, k--
+						c = input[j]
+						input[j] = input[k]
+						input[k] = c
+					start = end + 1
+				end++
+			return true
+
+		reverse_words_stub input
+			return me.reverse_words(input)
+
+	public
+		d = "some public var"
+
+singleton SomeOtherClass
+	public
+		do_something
+			print("Hello")
+
+EntryPoint
+	public
+		somegetfunc a a2 (out)b
+			b = a * 2 + a2
+
+		somefunc p1
+			p1++
+		run			
+			param1 = 1
+			param2 = 2
+
+			cpp#
+			param1++;
+			#cpp
+
+			b = (param2 == 3)
+
+			ASSERT_EXT((param2 == 3) "param2 must be 3")
+			ASSERT(param1 != 0)
+
+			me.somegetfunc(param1 param2 paramResult)
+			z = Someclass
+			a = Someclass
+			a.somefunc(1 "Hello")
+			a.initObject()
+			a.performSomethingViaObject()
+			z.ff = a
+			tmp = RussiaDateFormatter
+			z.ff.obj.somefunc(tmp)
+			me.z = z
+
+			me.ff.obj.somefunc(tmp)
+
+			print(z.ff.obj.abc)
+
+			print(me.ff.obj.abc)
+			read(me.ff.obj.abc)
+
+			a = 1
+			append(a)
+			print(a)
+			a = "hello "
+			append(a)
+			print(a)
+			a.name = "Bill"
+			append(a)
+			print(a)
+			a.name = "Bill"
+			append(a)
+			print(a)
+			a.name = "Bill"
+			read(a)
+			print(a)
+			a = 3
+			read(a)
+			print(a)
+			a.name = "Bill"
+			read(a)
+			print(a)
+
+			a.otherfunc(1 2)
+			a.somefunc(1)
+			print(a.f)
+
+			inp = "Hello "
+			inp .= "world"
+			b = a.reverse_words_stub(inp)
+			print(warnings inp)
+			print(a.d)
+			print(a)
+			read(c)
+			c.d = "Updated"
+			print(c)
+			read(a)
+			print(a)

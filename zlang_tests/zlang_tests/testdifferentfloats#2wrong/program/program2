@@ -1,0 +1,70 @@
+
+EntryPoint
+	public
+		log a
+			println(Number.Log(a))
+
+		log10 a
+			println(Number.Log10(a))
+
+		pow a b
+			println(Number.Pow(a b))
+
+		sqrt a
+			println(Number.Sqrt(a))
+
+		asin a
+			println(Number.Asin(a))
+
+		acos a
+			println(Number.Acos(a))
+
+		executeCalculations a b c
+			println("a = " + a)
+			println("b = " + b)
+			println("c = " + c)
+
+			println("log")
+			me.log(a)
+			me.log(b)
+			me.log(c)
+
+			println("log10")
+			me.log10(a)
+			me.log10(b)
+			me.log10(c)
+
+			println("sqrt")
+			me.sqrt(a)
+			me.sqrt(b)
+			me.sqrt(c)
+
+			println("asin")
+			me.asin(a)
+			me.asin(b)
+			me.asin(c)
+
+			println("acos")
+			me.acos(a)
+			me.acos(b)
+			me.acos(c)
+
+			println("function come to end")
+
+		run
+			a = ~-10.0
+			b = -10.0
+			c = -10
+			me.executeCalculations(a b c)
+
+			a = ~0.0
+			b = 0.0
+			c = 0
+        
+			println("exp")
+			me.pow(a -10)
+			me.pow(b -10)
+			me.pow(c -10)
+
+			return true
+

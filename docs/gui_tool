@@ -1,0 +1,15 @@
+This is video of current version of gui tool with command line tools execution service
+
+Tool is also working under Linux/Windows.
+
+My suggestions:
+
+1. It is needed to add "Back" button for all windows or add ability to make multiple calls to external functions during one call
+of gui tool using another way.
+
+2. It is not convient to enter file paths and commands manually. Maybe it is needed to have select for commands list, validate
+count of parameters for each supported command and add ability to choose pathes using standard file/folder choose dialog.
+
+There is only one problem with this thing. Command line tools have different names on different platforms. For example, copy tool
+has name "copy" under Windows and "cp" under MacOSX. Sometimes I think that it will be good to have defines or standard variable to 
+have ability to write native zlang platform-dependent code.

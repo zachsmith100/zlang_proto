@@ -1,0 +1,1 @@
+.GetProperty__(1, __PROP_ENUM__result)

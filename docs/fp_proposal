@@ -1,0 +1,59 @@
+Proposal for arbitrary floating point and fixed point support
+
+Default type for non-integers number can be defined by config of compiler or/and edition of compiler (like zlang for finance).
+Precision for default type can be configured also.
+
+We can set max precision to some reasonable value, for example, 768. Using bigger precision than max is a compile-time error.
+
+There must be a way to define type of numeric variable explicitely (independently from compiler config):
+a = 0 // integer
+a = 0.0 // type for non-integer by default (defined in config). Default precision will be used
+a = 0.0d // usual C++ double
+a = 0.0~128 // arbitrary precision floating point
+a = 0.0~f128 // arbitrary precision fixed point
+
+There is need in a lot of operations for floating/fixed point variables:
+1) Conversion to string/conversion to other number/print with needed precision and alignment
+print(a:10) // 10 digits after point
+print(a:10:5) // 10 digits before point and 5 digits after point
+s = "" + a:10 // 10 digits after point
+s = "" + a:10:5 // 10 digits before point and 5 digits after point
+b = a:10 // 10 digits after point
+b = a:10:5 // this is not error, but restriction for before point part will be ignored
+
+2) Math operations: abs, sin, cos, log, etc
+Possible ways:
+a. abs(f)
+b. f.abs()
+c. Math.Abs(f)
+
+Personally, I prefer last way and moreover I suggest to also refactor string functions, so we will get
+Number.Abs(f)
+String.Trim(s)
+and so on
+
+Full list: sqrt, pow, abs, sin, cos, tan, ctg, log, log2, log10, exp, exp2, exp10, acos, asin, atan, actg
+
+3) NaN and infinity checks - generally it will be good to eleminate any need in it. Let's think that any
+operation which can lead to NaN or infinity result is a error.
+
+4) Precision change, precision access and precision change conventions - 
+b - 128-bit floating point 
+c - 192-bit floating point 
+a = b + c
+a - 128-bit fp because of first argument precision
+
+Precision can be changed ONLY during math operations. Precision can be accessed via getPrecision method
+using usual math operation notation for call it.
+
+5) Rounding functions - we can use same notation
+round
+trunc
+ceil
+floor
+frac
+
+We also must provide some API to work with famous constants like PI number. Maybe something like PI:100 (100 digits after point).
+
+Errors. Any attempt to use math functions incorrectly like sqrt(-1), acos(-10) and so on must lead to exception and interruption of 
+current function.

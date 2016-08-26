@@ -1,0 +1,1 @@
+([[condition]] ? CUniVar([[leftValue]]) : CUniVar([[rightValue]]))

@@ -1,0 +1,35 @@
+
+EntryPoint
+	public
+		markFriends currentFriendIndex friendsMatrix visited
+			visited[currentFriendIndex] = 1
+			for k = 0; k < friendsMatrix[currentFriendIndex].length; k++			
+			if ((friendsMatrix[currentFriendIndex][k] == 'Y') and (visited[k] != 1))
+				me.markFriends(k friendsMatrix visited)
+
+		getFriendCirclesCount friendsMatrix (out)count	
+			count = 0
+			visited = Hashtable
+			for i = 0; i < friendsMatrix.length; i++
+				visited[i] = 0
+			currentFriendIndex = (friendsMatrix.length == 0) ? -1 : 0
+			while (currentFriendIndex != -1)
+				count++
+				me.markFriends(currentFriendIndex friendsMatrix visited)
+				for i = 0, currentFriendIndex = -1; i < friendsMatrix.length; i++
+					if (visited[i] != 1)
+						currentFriendIndex = i
+
+	public
+		run
+			friendsMatrix = Array
+			friendsMatrix[] = "YYNNNN"
+			friendsMatrix[] = "NNNNNY"
+			friendsMatrix[] = "YNNNYN"
+			friendsMatrix[] = "NYNYNN"
+			friendsMatrix[] = "NYNNNY"
+			friendsMatrix[] = "YNYNNN"
+			me.getFriendCirclesCount(friendsMatrix count)
+			println(count)
+			return true
+

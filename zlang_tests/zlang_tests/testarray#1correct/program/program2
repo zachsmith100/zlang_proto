@@ -1,0 +1,141 @@
+
+EntryPoint
+	public
+		run
+			arr = Array
+			arr.push(5)
+			arr[] = 10
+
+			clonedArr = arr.clone()
+			clonedArr.push(1)
+			clonedArr[] = 17
+			
+			println(clonedArr)
+
+			arr.push(7)
+			arr.push(9)
+
+			// print unsorted
+			for i = 0; i < arr.length; i++
+				println(arr[i])
+
+			// sort
+			for i = 0; i < arr.length - 1; i++
+				for k = i + 1; k < arr.length; k++
+					if arr[i] < arr[k]
+						tmp = arr[i]
+						arr[i] = arr[k]
+						arr[k] = tmp
+
+			println("sorted")
+
+			// print sorted
+			for i = 0; i < arr.length; i++
+				println(arr[i])
+
+			println("after remove")
+
+			arr.remove(1)
+
+			// print after remove element
+			for i = 0; i < arr.length; i++
+				println(arr[i])
+
+			arr.paste(0 "start")
+			arr.paste(arr.length "end")
+			arr.paste((arr.length / 2) "middle")
+
+			// print after insert elements
+			for i = 0; i < arr.length; i++
+				println(arr[i])
+
+			arr.resize(10)
+			println(arr)
+
+			firstArr = Array
+			firstArr[] = 10
+			firstArr[] = "string"
+			firstArr[] = true
+
+			secondArr = Array
+			secondArr.push(10)
+			secondArr.push("string")
+			secondArr.push(true)
+			
+			if firstArr == secondArr
+				println("arrays are equal")
+
+			if firstArr != secondArr
+				println("arrays are NOT equal")
+
+			firstArr.removeAll()
+			println(firstArr)
+			println(firstArr.length)
+
+			str = firstArr.implode("!!!")
+			println(str)
+
+			firstArr[] = 1
+			firstArr[] = secondArr
+			firstArr[] = "string"
+			str = firstArr.implode("!!!")
+			println(str)
+
+			firstArr[] = "end"
+
+			firstArr.cut(1 2)
+			println(firstArr)
+
+			firstArr[] = 5			
+			firstArr[] = 10			
+			firstArr[] = false
+			firstArr[] = 0
+			firstArr[] = 1
+
+			pos = firstArr.indexOf(1)
+			println(pos)
+			if pos != -1
+				println(firstArr[pos])
+			pos = firstArr.indexFirstOf(1)
+			println(pos)
+			if pos != -1
+				println(firstArr[pos])
+			pos = firstArr.indexLastOf(1)
+			println(pos)
+			if pos != -1
+				println(firstArr[pos])
+
+			pos = firstArr.indexOf(38)
+			println(pos)
+			if pos != -1
+				println(firstArr[pos])
+			pos = firstArr.indexFirstOf(firstArr)
+			println(pos)
+			if pos != -1
+				println(firstArr[pos])
+			pos = firstArr.indexLastOf("hello")
+			println(pos)
+			if pos != -1
+				println(firstArr[pos])
+
+			println(firstArr)
+			firstArr.remove(0 3)
+			println(firstArr)
+			
+			firstArr[firstArr[3]] = true
+			firstArr[0] = 101
+
+			println(firstArr)
+
+			a[] = 4
+			a[] = 5
+			a[] = 6
+			println(a)
+
+			b.push(1)
+			b.push(3)
+			b.push(5)
+			println(b)
+
+			return true
+

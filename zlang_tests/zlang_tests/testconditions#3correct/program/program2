@@ -1,0 +1,111 @@
+
+EntryPoint
+	public
+		return_int_10
+			result.result = 10
+
+		return_int_0
+			result.result = 0
+
+		return_int_minus_10
+			result.result = -10
+
+		return_double_plus
+			result.result = 10
+
+		return_double_0
+			result.result = 0
+
+		return_double_minus
+			result.result = -10
+
+		return_bool
+			result.result = true
+
+		return_zero_symbol
+			result.result = 'a' - 'a'
+
+		return_symbol
+			result.result = 'z'
+
+		return_function_value
+			result.result = me.return_bool()
+
+		return_function_value_with_compare
+			result.result = (me.return_bool() == true)
+
+		return_string
+			result.result = "world"
+
+		return_empty_string
+			result.result = ""
+
+		return_array
+			a = Array
+			a[] = 1
+			result.result = a
+
+		return_empty_array
+			a = Array
+			result.result = a
+
+		return_hashtable
+			a = Hashtable
+			a["cool"] = 1
+			result.result = a
+
+		return_empty_hashtable
+			a = Hashtable
+			result.result = a
+
+		return_condition
+			a = 7
+			b = 13
+			c = 21
+			result.result = ((a + b + c > a * b and a > 10) or b > 3)
+
+		return_condition2
+			a = 7
+			b = 13
+			c = 21
+			result.result = (a + b + c > a * b and (a > 10 or b > 3))
+
+		run
+			b = me.return_int_10()
+			println(b)
+			b2 = me.return_int_0()
+			println(b2)
+			b3 = me.return_int_minus_10()
+			println(b3)
+			b4 = me.return_double_plus()
+			println(b4)
+			b5 = me.return_double_0()
+			println(b5)
+			b6 = me.return_double_minus()
+			println(b6)
+			b7 = me.return_bool()
+			println(b7)
+			b8 = me.return_zero_symbol()
+			println(b8)
+			b9 = me.return_symbol()
+			println(b9)
+			b10 = me.return_function_value()
+			println(b10)
+			b11 = me.return_string()
+			println(b11)
+			b12 = me.return_empty_string()
+			println(b12)
+			b13 = me.return_array()
+			println(b13)
+			b14 = me.return_empty_array()
+			println(b14)
+			b15 = me.return_hashtable()
+			println(b15)
+			b16 = me.return_empty_hashtable()
+			println(b16)
+			b17 = me.return_condition()
+			println(b17)
+			b18 = me.return_condition2()
+			println(b18)
+			b19 = me.return_function_value_with_compare()
+			println(b19)

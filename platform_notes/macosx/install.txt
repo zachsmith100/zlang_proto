@@ -1,0 +1,12 @@
+It is needed to install latest GMP & MPFR:
+1. You need to download GMP & MPFR from official sites, unpack it
+2. Go to folder of GMP
+./configure --prefix=/usr/local/
+sudo make install
+3. Go to folder of MPFR
+./configure --prefix=/usr/local/ --with-gmp=/usr/local/
+sudo make install
+
+It is needed to install CURL to pass testcpp#2correct test. You must use same way to install CURL.
+
+See also gui_tool/readme_macosx.txt for instructions how to build guitool

@@ -1,0 +1,45 @@
+
+SomeBaseClass
+	public
+		prop = 456
+
+singleton SomeClass : SomeBaseClass
+	public
+		name = "my name"
+		prop = 123
+	
+		onCreated
+			println("OnCreated")
+			println(me.name)
+			println(me.prop)
+			println(me.newprop)
+
+EntryPoint
+	public
+		run
+			println("0")
+			println(base.prop)
+			println("1")
+			c1 = SomeClass
+			println("2")
+			c1 = SomeClass(name: "your name")
+			println("3")
+			c1 = SomeClass(prop: 321)
+			println("4")
+			c1 = SomeClass(name: "your name", prop: 321, newprop: 3.3)
+			println("5")
+			c1 = SomeClass(prop: 3 + 2 * 3)
+			b = "Hello"
+			println("6")
+			c1 = SomeClass(prop: b)
+			b = Array
+			b[] = 1
+			b[] = 2
+			println("7")
+			c1 = SomeClass(prop: b)
+			println("8")
+			c1 = SomeClass(prop: Array)
+			println("9")
+			c1 = SomeClass(prop: Object)
+			return true
+

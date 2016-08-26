@@ -1,0 +1,1 @@
+CUniVar [[className]]Proto::[[methodName]]([[className]]Proto* MY[[parameters]])

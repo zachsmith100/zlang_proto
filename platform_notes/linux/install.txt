@@ -1,0 +1,5 @@
+You need to install GMP & MPFR using apt-get install command.
+
+You need to install CURL (you can also use apt-get install command) to pass testcpp#2correct test.
+
+See also gui_tool/readme_linux.txt for instructions how to build guitool

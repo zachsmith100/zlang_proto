@@ -1,0 +1,46 @@
+
+singleton SomeSingletonClass
+	public
+		prop1 = 1
+
+		getInp a
+			println(a)
+			return true
+
+SomeOtherClass
+	public
+		prop2 = 2
+
+		getResult0
+			return true
+
+		getResult1 p1
+			println(p1)
+			return true
+
+		getResult2 p1 p2
+			println(p1)
+			println(p2)
+			result.result = true
+
+EntryPoint
+	public
+		prop0 = 3
+
+		getSomething inp
+			println(inp)
+			return true
+
+		run
+			str = "123"
+			b = SomeOtherClass
+			println(b.getResult1(me.getSomething(str)))
+			println(println(println(str)))
+			println(b.getResult2(println(str) b.getResult0()))
+			println(b.prop2)
+			println(SomeSingletonClass.getInp(str))
+			println(SomeSingletonClass.prop1)
+			println(me.prop0)
+			println(b.getResult2(me.prop0 b.getResult1(SomeSingletonClass.prop1)))
+
+			return true

@@ -1,0 +1,42 @@
+#include <iostream>
+
+using namespace std;
+
+int calculateSortIndex(const char * input)
+{
+    char map[26] = {0};
+    int length = 0;
+    int radix = 0;
+    int total = 0;
+    int degree = 1;
+
+    while(input[length])
+    {
+        map[input[length] - 'a'] = 1;
+        length++;
+    }
+
+    for(int i = 0; i < 26; i++)
+    {
+        if(map[i] != 0)
+        {
+            map[i] = radix;
+            radix++;
+        }
+    }
+
+    for(int i = length - 1; i >= 0; i--)
+    {
+        total += map[input[i] - 'a'] * degree;
+        degree *= radix;
+    }
+
+    return total;
+}
+
+int main()
+{
+   cout << calculateSortIndex("abcde") << endl;
+
+   return 0;
+}

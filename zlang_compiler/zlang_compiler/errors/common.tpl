@@ -1,0 +1,1 @@
+Fatal error in [[filePath]] at line [[line]]! 

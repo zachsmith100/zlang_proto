@@ -1,0 +1,79 @@
+
+EntryPoint
+	public
+		testZeroDivision
+			println("zero division")
+			a = Float<128>(12.8)
+			b = Float<64>
+			a /= b
+			println("failed")
+
+		testInvalidPrecision1
+			println("PI invalid precision")
+			println(Number.PI(-10))
+			println("failed")
+
+		testInvalidPrecision2
+			println("PI invalid precision")
+			println(Number.PI(0))
+			println("failed")
+
+		testInvalidPrecision3
+			println("PI invalid precision")
+			println(Number.PI(10))
+			println("failed")
+
+		testInvalidGetPrecision
+			println("PI invalid GET precision")
+			println(Number.GetPrecision("hello world"))
+			println("failed")
+
+		testInvalidInit1
+			println("Invalid initialization")
+			s = "Hello world"
+			d = Float<72>(s)
+			println("failed")
+
+		testInvalidInit2
+			println("Invalid initialization")
+			a = Hashtable
+			d = Float<72>(a)
+			println("failed")
+
+		testInvalidInit3
+			println("Invalid initialization")
+			a = Array
+			d = Float<72>(a)
+			println("failed")
+
+		testInvalidInit4
+			println("Invalid initialization")
+			a = Object
+			d = Float<72>(a)
+			println("failed")
+
+		testInvalidInit5
+			println("Invalid initialization")
+			a = EntryPoint
+			d = Float<72>(a)
+			println("failed")
+
+		testInvalidInit6
+			println("Invalid initialization")
+			a = me.testInvalidInit6
+			d = Float<72>(a)
+			println("failed")
+
+		run
+			me.testZeroDivision()
+			me.testInvalidPrecision1()
+			me.testInvalidPrecision2()
+			me.testInvalidPrecision3()
+			me.testInvalidInit1()
+			me.testInvalidInit2()
+			me.testInvalidInit3()
+			me.testInvalidInit4()
+			me.testInvalidInit5()
+			me.testInvalidInit6()
+			return true
+

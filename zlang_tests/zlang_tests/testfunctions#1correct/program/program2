@@ -1,0 +1,300 @@
+@return
+	defaultField: nonDefault
+@paramFirst
+	editor: numeric
+	group: one
+testNonDefaultFunction paramFirst
+	result.nonDefault = "abrakadabra"
+
+usualFunction
+	print("hello world")
+	return true
+
+testReturnObject
+	result.success = true
+	result.result = Object
+	result.result.name = "Hello"
+	result.result.world = "world"
+	result.otherResult = Object
+	result.otherResult.name = "Other"
+	result.otherResult.value = "result"
+	result.arrayResult = Array
+	result.arrayResult[] = 3
+	result.arrayResult[] = 2
+	result.arrayResult[] = 1
+
+testReturnObjectP param1 param2
+	result.success = true
+	result.result = Object
+	result.result.name = "Hello"
+	result.result.name .=  param1
+	result.result.world = "world"
+	result.result.world .= param1
+	result.otherResult = Object
+	result.otherResult.name = "Other"
+	result.otherResult.name .= param1
+	result.otherResult.value = "result"
+	result.otherResult.value .= param1
+	result.arrayResult = Array
+	result.arrayResult[] = 3 + param2
+	result.arrayResult[] = 2 + param2
+	result.arrayResult[] = 1 + param2
+
+singleton Class1
+	public
+		conflictNameFunction a b c d
+			println(a - b * c + d)
+			return true		
+
+conflictNameFunction a b (out)c
+	c = a + b
+	return true
+
+BaseEntryPoint
+	public
+		@return
+			defaultField: nonDefault
+		testNonDefaultMethod
+			result.nonDefault = "abrakadabra"
+
+		testReturnObject
+			result.success = true
+			result.result = Object
+			result.result.name = "Base::Hello"
+			result.result.world = "Base::world"
+			result.otherResult = Object
+			result.otherResult.name = "Base::Other"
+			result.otherResult.value = "Base::result"
+			result.arrayResult = Array
+			result.arrayResult[] = "Base:3"
+			result.arrayResult[] = "Base:2"
+			result.arrayResult[] = "Base:1"
+
+		testReturnObjectP param1 param2
+			result.success = true
+			result.result = Object
+			result.result.name = "Hello"
+			result.result.name .=  param1
+			result.result.world = "world"
+			result.result.world .= param1
+			result.otherResult = Object
+			result.otherResult.name = "Other"
+			result.otherResult.name .= param1
+			result.otherResult.value = "result"
+			result.otherResult.value .= param1
+			result.arrayResult = Array
+			result.arrayResult[] = 3 + param2
+			result.arrayResult[] = 2 + param2
+			result.arrayResult[] = 1 + param2
+
+EntryPoint : BaseEntryPoint
+	public
+		conflictNameFunction a b c
+			println(a + b + c)
+			return true
+
+		emptyFunc
+			return true
+
+		testReturnObject
+			result.success = true
+			result.result = Object
+			result.result.name = "Hello"
+			result.result.world = "world"
+			result.otherResult = Object
+			result.otherResult.name = "Other"
+			result.otherResult.value = "result"
+			result.arrayResult = Array
+			result.arrayResult[] = 3
+			result.arrayResult[] = 2
+			result.arrayResult[] = 1
+
+		testReturnObjectP param1 param2
+			result.success = true
+			result.result = Object
+			result.result.name = "Hello"
+			result.result.name .=  param1
+			result.result.world = "world"
+			result.result.world .= param1
+			result.otherResult = Object
+			result.otherResult.name = "Other"
+			result.otherResult.name .= param1
+			result.otherResult.value = "result"
+			result.otherResult.value .= param1
+			result.arrayResult = Array
+			result.arrayResult[] = 3 + param2
+			result.arrayResult[] = 2 + param2
+			result.arrayResult[] = 1 + param2
+
+		run
+			me.nonExistResult = "workaround"
+			println("==2==")
+			usualFunction()
+			println("==3==")
+			a = me
+			a.conflictNameFunction(1 2 3)
+			me.emptyFunc()
+			println("==4==")			
+			conflictNameFunction(1 2 c)
+			println(c)
+			println("==5==")			
+			Class1.conflictNameFunction(1 2 3 4)
+			println("==6==")			
+			lastFunction(aa 10 15)
+			println(aa)
+			println("==7==")
+			a1 = testReturnObject()
+			println(a1)
+			a2 = testReturnObject().object.success
+			println(a2)
+			a3 = testReturnObject().object.result
+			println(a3)
+			a4 = testReturnObject().object.otherResult
+			println(a4)
+			a5 = testReturnObject().object.arrayResult
+			println(a5)
+			a6 = testReturnObject().object.nonExistResult
+			println(a6)
+			println("==8==")
+			b1 = me.testReturnObject()
+			println(b1)
+			b2 = me.testReturnObject().object.success
+			println(b2)
+			b3 = me.testReturnObject().object.result
+			println(b3)
+			b4 = me.testReturnObject().object.otherResult
+			println(b4)
+			b5 = me.testReturnObject().object.arrayResult
+			println(b5)
+			b6 = me.testReturnObject().object.nonExistResult
+			println(b6)
+			a = me
+			println("==9==")
+			c1 = a.testReturnObject()
+			println(c1)
+			c2 = a.testReturnObject().object.success
+			println(c2)
+			c3 = a.testReturnObject().object.result
+			println(c3)
+			c4 = a.testReturnObject().object.otherResult
+			println(c4)
+			c5 = a.testReturnObject().object.arrayResult
+			println(c5)
+			c6 = a.testReturnObject().object.nonExistResult
+			println(c6)
+			println("==10==")
+			d1 = base.testReturnObject()
+			println(d1)
+			d2 = base.testReturnObject().object.success
+			println(d2)
+			d3 = base.testReturnObject().object.result
+			println(d3)
+			d4 = base.testReturnObject().object.otherResult
+			println(d4)
+			d5 = base.testReturnObject().object.arrayResult
+			println(d5)
+			d6 = base.testReturnObject().object.nonExistResult
+			println(d6)
+			b = BaseEntryPoint
+			b.a = me
+			println("==11==")
+			e1 = b.a.testReturnObject()
+			println(e1)
+			e2 = b.a.testReturnObject().object.success
+			println(e2)
+			e3 = b.a.testReturnObject().object.result
+			println(e3)
+			e4 = b.a.testReturnObject().object.otherResult
+			println(e4)
+			e5 = b.a.testReturnObject().object.arrayResult
+			println(e5)
+			e6 = b.a.testReturnObject().object.nonExistResult
+			println(e6)
+
+			println("==12==")
+			f1 = testReturnObjectP("props" 11)
+			println(f1)
+			f2 = testReturnObjectP("props" 11).object.success
+			println(f2)
+			f3 = testReturnObjectP("props" 11).object.result
+			println(f3)
+			f4 = testReturnObjectP("props" 11).object.otherResult
+			println(f4)
+			f5 = testReturnObjectP("props" 11).object.arrayResult
+			println(f5)
+			f6 = testReturnObjectP("props" 11).object.nonExistResult
+			println(f6)
+			println("==13==")
+			g1 = me.testReturnObjectP("props" 12)
+			println(g1)
+			g2 = me.testReturnObjectP("props" 12).object.success
+			println(g2)
+			g3 = me.testReturnObjectP("props" 12).object.result
+			println(g3)                      
+			g4 = me.testReturnObjectP("props" 12).object.otherResult
+			println(g4)
+			g5 = me.testReturnObjectP("props" 12).object.arrayResult
+			println(g5)
+			g6 = me.testReturnObjectP("props" 12).object.nonExistResult
+			println(g6)
+			a = me
+			println("==14==")
+			h1 = a.testReturnObjectP("props" 13)
+			println(h1)
+			h2 = a.testReturnObjectP("props" 13).object.success
+			println(h2)
+			h3 = a.testReturnObjectP("props" 13).object.result
+			println(h3)
+			h4 = a.testReturnObjectP("props" 13).object.otherResult
+			println(h4)
+			h5 = a.testReturnObjectP("props" 13).object.arrayResult
+			println(h5)
+			h6 = a.testReturnObjectP("props" 13).object.nonExistResult
+			println(h6)
+			println("==15==")
+			k1 = base.testReturnObjectP("props" 14)
+			println(k1)
+			k2 = base.testReturnObjectP("props" 14).object.success
+			println(k2)
+			k3 = base.testReturnObjectP("props" 14).object.result
+			println(k3)
+			k4 = base.testReturnObjectP("props" 14).object.otherResult
+			println(k4)
+			k5 = base.testReturnObjectP("props" 14).object.arrayResult
+			println(k5)
+			k6 = base.testReturnObjectP("props" 14).object.nonExistResult
+			println(k6)
+			b = BaseEntryPoint
+			b.a = me
+			println("==16==")
+			l1 = b.a.testReturnObjectP("props" 15)
+			println(l1)
+			l2 = b.a.testReturnObjectP("props" 15).object.success
+			println(l2)
+			l3 = b.a.testReturnObjectP("props" 15).object.result
+			println(l3)
+			l4 = b.a.testReturnObjectP("props" 15).object.otherResult
+			println(l4)
+			l5 = b.a.testReturnObjectP("props" 15).object.arrayResult
+			println(l5)
+			l6 = b.a.testReturnObjectP("props" 15).object.nonExistResult
+			println(l6)
+			println("==17==")
+			println(testNonDefaultFunction(1))
+			println(testNonDefaultFunction(1).object.nonDefault)
+			println(testNonDefaultFunction(1).object.success)
+			println(testNonDefaultFunction(1).object.result)
+			println("==18==")
+			println(me.testNonDefaultMethod())
+			println(me.testNonDefaultMethod().object.nonDefault)
+			println(me.testNonDefaultMethod().object.success)
+			println(me.testNonDefaultMethod().object.result)
+
+			return true
+
+
+
+lastFunction (out)a b c
+	a = b * c
+	return true
+
